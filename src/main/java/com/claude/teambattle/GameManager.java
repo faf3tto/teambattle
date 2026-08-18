@@ -10,8 +10,13 @@ import net.minecraft.network.protocol.game.ClientboundSetSubtitleTextPacket;
 import net.minecraft.network.protocol.game.ClientboundSetTitleTextPacket;
 import net.minecraft.network.protocol.game.ClientboundSetTitlesAnimationPacket;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.level.ServerBossEvent;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.BossEvent;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.level.GameType;
@@ -68,6 +73,13 @@ public class GameManager
 	private long shrinkEndTick = 0;
 	private final Set<Integer> announcedSeconds = new HashSet<>();
 	private int tickCounter = 0;
+
+	// Fase Wither dopo la chiusura completa della zona
+	private long zoneClosedTick = 0;
+	private long nextWitherTick = 0;
+	private int withersSpawned = 0;
+	private ServerBossEvent witherBar = null;
+	private final List<UUID> spawnedWithers = new ArrayList<>();
 
 	// Override del centro impostato con /battle center (null = usa la config)
 	private Config.CenterMode centerOverrideMode = null;
@@ -165,6 +177,10 @@ public class GameManager
 		shrinkEndTick = level.getGameTime() + shrinkSeconds * 20L;
 		announcedSeconds.clear();
 		tickCounter = 0;
+		zoneClosedTick = 0;
+		nextWitherTick = 0;
+		withersSpawned = 0;
+		spawnedWithers.clear();
 
 		border.setCenter(centerX, centerZ);
 		border.setSize(initialSize);
@@ -286,6 +302,10 @@ public class GameManager
 	{
 		p.setGameMode(GameType.SURVIVAL);
 
+		// Inventario pulito, poi il kit iniziale configurato con /battle kit set
+		p.getInventory().clearContent();
+		KitManager.applyTo(p);
+
 		AttributeInstance attr = p.getAttribute(Attributes.MAX_HEALTH);
 		if (attr != null)
 			attr.setBaseValue(maxHealth);
@@ -366,6 +386,8 @@ public class GameManager
 
 			if (Config.ANNOUNCE_SHRINK.get())
 				announceShrinkCountdown();
+
+			updateWitherPhase();
 		}
 
 		// Ogni 2 secondi: perimetro della zona finale
@@ -492,6 +514,80 @@ public class GameManager
 	}
 
 	// ---------------------------------------------------------------
+	// Fase Wither: countdown in bossbar e spawn periodico
+	// ---------------------------------------------------------------
+	private void updateWitherPhase()
+	{
+		ServerLevel level = server.overworld();
+		long now = level.getGameTime();
+
+		// Rileva la chiusura completa della zona
+		if (zoneClosedTick == 0)
+		{
+			if (now >= shrinkEndTick)
+			{
+				zoneClosedTick = now;
+
+				if (Config.WITHER_ENABLED.get())
+				{
+					nextWitherTick = now + Config.WITHER_DELAY_SECONDS.get() * 20L;
+
+					witherBar = new ServerBossEvent(
+						Component.literal("Wither in arrivo"),
+						BossEvent.BossBarColor.PURPLE,
+						BossEvent.BossBarOverlay.PROGRESS);
+
+					for (ServerPlayer p : server.getPlayerList().getPlayers())
+						witherBar.addPlayer(p);
+				}
+			}
+			return;
+		}
+
+		if (!Config.WITHER_ENABLED.get() || nextWitherTick == 0)
+			return;
+
+		long remainingTicks = nextWitherTick - now;
+		long totalTicks = (withersSpawned == 0
+			? Config.WITHER_DELAY_SECONDS.get()
+			: Config.WITHER_INTERVAL_SECONDS.get()) * 20L;
+
+		if (remainingTicks <= 0)
+		{
+			spawnWither(level);
+			withersSpawned++;
+			nextWitherTick = now + Config.WITHER_INTERVAL_SECONDS.get() * 20L;
+			remainingTicks = nextWitherTick - now;
+			totalTicks = Config.WITHER_INTERVAL_SECONDS.get() * 20L;
+		}
+
+		if (witherBar != null)
+		{
+			int remSec = (int) Math.ceil(remainingTicks / 20.0);
+			String label = (withersSpawned == 0 ? "☠ Primo Wither in arrivo: " : "☠ Prossimo Wither tra: ")
+				+ (remSec / 60) + ":" + String.format("%02d", remSec % 60);
+
+			witherBar.setName(Component.literal(label).withStyle(ChatFormatting.DARK_PURPLE));
+			witherBar.setProgress((float) Math.max(0.0, Math.min(1.0, remainingTicks / (double) totalTicks)));
+		}
+	}
+
+	private void spawnWither(ServerLevel level)
+	{
+		double half = finalSizeStored / 2.0 * 0.8;
+		double x = centerX + (random.nextDouble() * 2 - 1) * half;
+		double z = centerZ + (random.nextDouble() * 2 - 1) * half;
+		int y = groundY(level, (int) Math.floor(x), (int) Math.floor(z));
+
+		Entity wither = EntityType.WITHER.spawn(level, BlockPos.containing(x, y + 2, z), MobSpawnType.EVENT);
+		if (wither != null)
+			spawnedWithers.add(wither.getUUID());
+
+		server.getPlayerList().broadcastSystemMessage(
+			Component.literal("☠ Un Wither è comparso nella zona!").withStyle(ChatFormatting.DARK_PURPLE), false);
+	}
+
+	// ---------------------------------------------------------------
 	// Morti, abbandoni, vittoria
 	// ---------------------------------------------------------------
 	public void onPlayerDeath(ServerPlayer p)
@@ -545,6 +641,9 @@ public class GameManager
 			p.setGameMode(GameType.SPECTATOR);
 		else if (!playerTeams.containsKey(id))
 			p.setGameMode(GameType.SPECTATOR);	// chi entra a partita in corso guarda
+
+		if (witherBar != null)
+			witherBar.addPlayer(p);
 	}
 
 	private boolean isTeamAlive(String teamName)
@@ -624,6 +723,25 @@ public class GameManager
 
 		if (server == null)
 			return;
+
+		// Rimuovi bossbar e Wither della partita
+		if (witherBar != null)
+		{
+			witherBar.removeAllPlayers();
+			witherBar = null;
+		}
+
+		ServerLevel witherLevel = server.overworld();
+		for (UUID wid : spawnedWithers)
+		{
+			Entity w = witherLevel.getEntity(wid);
+			if (w != null)
+				w.discard();
+		}
+		spawnedWithers.clear();
+		zoneClosedTick = 0;
+		nextWitherTick = 0;
+		withersSpawned = 0;
 
 		// Ripristina il bordo com'era prima della partita
 		ServerLevel level = server.overworld();

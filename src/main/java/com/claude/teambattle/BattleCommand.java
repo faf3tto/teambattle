@@ -70,6 +70,30 @@ public class BattleCommand
 					ctx.getSource().sendSuccess(() -> GameManager.INSTANCE.describeCenter(), false);
 					return 1;
 				}))
+			.then(Commands.literal("kit")
+				.then(Commands.literal("set")
+					.executes(ctx -> {
+						var player = ctx.getSource().getPlayerOrException();
+						KitManager.captureFrom(player);
+						ctx.getSource().sendSuccess(() -> Component.literal(
+							"Kit iniziale salvato dal tuo inventario (" + KitManager.itemCount() +
+							" oggetti, armatura e mano secondaria comprese)."), true);
+						return 1;
+					}))
+				.then(Commands.literal("clear")
+					.executes(ctx -> {
+						KitManager.clear();
+						ctx.getSource().sendSuccess(() -> Component.literal(
+							"Kit iniziale svuotato: i giocatori partiranno a mani vuote."), true);
+						return 1;
+					}))
+				.executes(ctx -> {
+					ctx.getSource().sendSuccess(() -> Component.literal(
+						"Kit iniziale attuale: " + KitManager.itemCount() + " oggetti." +
+						"\nRiempi il TUO inventario come vuoi che partano i giocatori e usa /battle kit set." +
+						"\n/battle kit clear per svuotarlo."), false);
+					return 1;
+				}))
 			.then(Commands.literal("stop")
 				.executes(ctx -> {
 					Component result = GameManager.INSTANCE.stop();
@@ -91,7 +115,10 @@ public class BattleCommand
 						"\n- announceShrink: " + Config.ANNOUNCE_SHRINK.get() +
 						"\n- showFinalZone: " + Config.SHOW_FINAL_ZONE.get() +
 						"\nUso: /battle start [initialSize] [finalSize] [shrinkSeconds] [maxHealth]" +
-						"\nCentro: /battle center spawn | random | <x> <z>"), false);
+						"\n- witherEnabled: " + Config.WITHER_ENABLED.get() +
+						" (primo dopo " + Config.WITHER_DELAY_SECONDS.get() + "s, poi ogni " + Config.WITHER_INTERVAL_SECONDS.get() + "s)" +
+						"\nCentro: /battle center spawn | random | <x> <z>" +
+						"\nKit: /battle kit set | clear"), false);
 					return 1;
 				})));
 	}

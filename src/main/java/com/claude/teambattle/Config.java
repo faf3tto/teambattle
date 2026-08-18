@@ -23,6 +23,9 @@ public class Config
 	public static final ForgeConfigSpec.BooleanValue TEAMMATE_GLOW;
 	public static final ForgeConfigSpec.BooleanValue ANNOUNCE_SHRINK;
 	public static final ForgeConfigSpec.BooleanValue SHOW_FINAL_ZONE;
+	public static final ForgeConfigSpec.BooleanValue WITHER_ENABLED;
+	public static final ForgeConfigSpec.IntValue WITHER_DELAY_SECONDS;
+	public static final ForgeConfigSpec.IntValue WITHER_INTERVAL_SECONDS;
 
 	static
 	{
@@ -81,6 +84,18 @@ public class Config
 		SHOW_FINAL_ZONE = b
 			.comment("Mostra il perimetro della zona finale con particelle rosse")
 			.define("showFinalZone", true);
+
+		WITHER_ENABLED = b
+			.comment("Dopo la chiusura completa della zona, spawna Wither per forzare la fine della partita")
+			.define("witherEnabled", true);
+
+		WITHER_DELAY_SECONDS = b
+			.comment("Secondi di attesa tra la chiusura completa della zona e il primo Wither")
+			.defineInRange("witherDelaySeconds", 600, 5, 86400);
+
+		WITHER_INTERVAL_SECONDS = b
+			.comment("Secondi tra un Wither e il successivo")
+			.defineInRange("witherIntervalSeconds", 60, 5, 86400);
 
 		b.pop();
 
