@@ -1,6 +1,9 @@
 package com.claude.teambattle;
 
 import com.mojang.brigadier.CommandDispatcher;
+import net.minecraft.commands.CommandBuildContext;
+import net.minecraft.commands.arguments.blocks.BlockStateArgument;
+import net.minecraft.core.registries.BuiltInRegistries;
 import com.mojang.brigadier.arguments.DoubleArgumentType;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.context.CommandContext;
@@ -10,7 +13,7 @@ import net.minecraft.network.chat.Component;
 
 public class BattleCommand
 {
-	public static void register(CommandDispatcher<CommandSourceStack> dispatcher)
+	public static void register(CommandDispatcher<CommandSourceStack> dispatcher, CommandBuildContext buildContext)
 	{
 		dispatcher.register(Commands.literal("battle")
 			.requires(src -> src.hasPermission(2))
@@ -112,6 +115,75 @@ public class BattleCommand
 					return 1;
 				}))
 			.then(Commands.literal("luckyblocks")
+				.then(Commands.literal("add")
+					.then(Commands.argument("block", BlockStateArgument.block(buildContext))
+						.then(Commands.argument("peso", IntegerArgumentType.integer(1, 1000))
+							.executes(ctx -> {
+								var block = BlockStateArgument.getBlock(ctx, "block").getState().getBlock();
+								String id = BuiltInRegistries.BLOCK.getKey(block).toString();
+								int peso = IntegerArgumentType.getInteger(ctx, "peso");
+								LuckyBlockPool.addOrUpdate(id, peso);
+								ctx.getSource().sendSuccess(() -> Component.literal(
+									"🍀 Aggiunto " + id + " al pool con peso " + peso +
+									". Blocchi nel pool: " + LuckyBlockPool.list().size() + "."), true);
+								return 1;
+							}))))
+				.then(Commands.literal("remove")
+					.then(Commands.argument("block", BlockStateArgument.block(buildContext))
+						.executes(ctx -> {
+							var block = BlockStateArgument.getBlock(ctx, "block").getState().getBlock();
+							String id = BuiltInRegistries.BLOCK.getKey(block).toString();
+							if (LuckyBlockPool.remove(id))
+								ctx.getSource().sendSuccess(() -> Component.literal("Rimosso " + id + " dal pool."), true);
+							else
+								ctx.getSource().sendFailure(Component.literal(id + " non era nel pool."));
+							return 1;
+						})))
+				.then(Commands.literal("list")
+					.executes(ctx -> {
+						var entries = LuckyBlockPool.list();
+						StringBuilder sb = new StringBuilder("Pool lucky block");
+						if (entries.isEmpty())
+							sb.append(": vuoto (si usa il blocco d'oro di default).");
+						else
+						{
+							int total = entries.stream().mapToInt(e -> e.weight).sum();
+							sb.append(" (").append(entries.size()).append(" blocchi):");
+							for (var e : entries)
+								sb.append("\n- ").append(e.id).append("  peso ").append(e.weight)
+								  .append(" (").append(String.format("%.1f", 100.0 * e.weight / total)).append("%)");
+						}
+						sb.append("\nEffetti alla rottura: ").append(LuckyBlockPool.useModEffects()
+							? "di TeamBattle (500 effetti)" : "nativi del blocco/mod di origine");
+						sb.append("\nQuantità per partita: ").append(GameManager.INSTANCE.getLuckyCount());
+						final String out = sb.toString();
+						ctx.getSource().sendSuccess(() -> Component.literal(out), false);
+						return 1;
+					}))
+				.then(Commands.literal("count")
+					.then(Commands.argument("quantita", IntegerArgumentType.integer(1, 5000))
+						.executes(ctx -> {
+							int n = IntegerArgumentType.getInteger(ctx, "quantita");
+							GameManager.INSTANCE.setLuckyCountOverride(n);
+							ctx.getSource().sendSuccess(() -> Component.literal(
+								"Verranno sparsi " + n + " lucky block per partita."), true);
+							return 1;
+						})))
+				.then(Commands.literal("effects")
+					.then(Commands.literal("on")
+						.executes(ctx -> {
+							LuckyBlockPool.setModEffects(true);
+							ctx.getSource().sendSuccess(() -> Component.literal(
+								"Alla rottura scatteranno i 500 effetti di TeamBattle."), true);
+							return 1;
+						}))
+					.then(Commands.literal("off")
+						.executes(ctx -> {
+							LuckyBlockPool.setModEffects(false);
+							ctx.getSource().sendSuccess(() -> Component.literal(
+								"Alla rottura i blocchi si comporteranno in modo nativo (gestiti dalla loro mod di origine)."), true);
+							return 1;
+						})))
 				.then(Commands.literal("on")
 					.executes(ctx -> {
 						GameManager.INSTANCE.setLuckyOverride(true);

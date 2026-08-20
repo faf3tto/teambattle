@@ -6,6 +6,9 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.level.BlockEvent;
+import net.minecraftforge.event.level.ExplosionEvent;
+import net.minecraftforge.event.entity.living.LivingDestroyBlockEvent;
+import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
@@ -14,7 +17,7 @@ public class GameEvents
 	@SubscribeEvent
 	public static void onRegisterCommands(RegisterCommandsEvent event)
 	{
-		BattleCommand.register(event.getDispatcher());
+		BattleCommand.register(event.getDispatcher(), event.getBuildContext());
 	}
 
 	@SubscribeEvent
@@ -27,12 +30,42 @@ public class GameEvents
 	@SubscribeEvent
 	public static void onBlockBreak(BlockEvent.BreakEvent event)
 	{
-		if (event.getPlayer() instanceof ServerPlayer player
-			&& event.getLevel() instanceof ServerLevel level
-			&& GameManager.INSTANCE.handleLuckyBreak(player, level, event.getPos()))
+		if (!(event.getPlayer() instanceof ServerPlayer player)
+			|| !(event.getLevel() instanceof ServerLevel level))
+			return;
+
+		if (GameManager.INSTANCE.handleLuckyBreak(player, level, event.getPos()))
 		{
 			event.setCanceled(true);
+			return;
 		}
+
+		// Registra il blocco prima che venga distrutto, per il ripristino
+		Rollback.record(level, event.getPos());
+	}
+
+	@SubscribeEvent
+	public static void onBlockPlace(BlockEvent.EntityPlaceEvent event)
+	{
+		if (event.getLevel() instanceof ServerLevel level)
+			Rollback.record(level, event.getPos());
+	}
+
+	@SubscribeEvent
+	public static void onExplosion(ExplosionEvent.Detonate event)
+	{
+		if (!(event.getLevel() instanceof ServerLevel level))
+			return;
+
+		for (BlockPos pos : event.getAffectedBlocks())
+			Rollback.record(level, pos);
+	}
+
+	@SubscribeEvent
+	public static void onLivingDestroyBlock(LivingDestroyBlockEvent event)
+	{
+		if (event.getEntity().level() instanceof ServerLevel level)
+			Rollback.record(level, event.getPos());
 	}
 
 	@SubscribeEvent

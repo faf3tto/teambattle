@@ -29,6 +29,8 @@ public class Config
 	public static final ForgeConfigSpec.IntValue TEAM_SIZE;
 	public static final ForgeConfigSpec.BooleanValue LUCKY_ENABLED;
 	public static final ForgeConfigSpec.IntValue LUCKY_COUNT;
+	public static final ForgeConfigSpec.BooleanValue RESTORE_WORLD;
+	public static final ForgeConfigSpec.IntValue RESTORE_SPEED;
 
 	static
 	{
@@ -111,6 +113,14 @@ public class Config
 		LUCKY_COUNT = b
 			.comment("Quanti lucky block spargere nella zona all'avvio della partita")
 			.defineInRange("luckyBlocksCount", 100, 1, 5000);
+
+		RESTORE_WORLD = b
+			.comment("A fine partita ripristina i blocchi modificati durante il gioco (scavi, costruzioni, esplosioni, effetti lucky block)")
+			.define("restoreWorld", true);
+
+		RESTORE_SPEED = b
+			.comment("Quanti blocchi ripristinare per tick a fine partita (piu' alto = piu' veloce ma piu' lag)")
+			.defineInRange("restoreSpeedPerTick", 2000, 100, 100000);
 
 		b.pop();
 

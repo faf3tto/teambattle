@@ -135,6 +135,7 @@ public class LuckyEffects
 		}
 		case "chest":
 		{
+			Rollback.record(level, pos);
 			level.setBlock(pos, Blocks.CHEST.defaultBlockState(), 3);
 			BlockEntity be = level.getBlockEntity(pos);
 			if (be instanceof ChestBlockEntity chest)
@@ -305,7 +306,10 @@ public class LuckyEffects
 						{
 							BlockPos bp = c.offset(dx, dy, dz);
 							if (level.getBlockState(bp).isAir())
+							{
+								Rollback.record(level, bp);
 								level.setBlock(bp, block.defaultBlockState(), 3);
+							}
 						}
 					}
 			break;
@@ -322,6 +326,7 @@ public class LuckyEffects
 					if (dx * dx + dz * dz <= r * r)
 					{
 						BlockPos bp = c.offset(dx, -1, dz);
+						Rollback.record(level, bp);
 						level.setBlock(bp, block.defaultBlockState(), 3);
 					}
 			break;
@@ -333,7 +338,10 @@ public class LuckyEffects
 			{
 				BlockPos bp = p.blockPosition().offset(random.nextInt(3) - 1, 6 + random.nextInt(3), random.nextInt(3) - 1);
 				if (level.getBlockState(bp).isAir())
+				{
+					Rollback.record(level, bp);
 					level.setBlock(bp, Blocks.ANVIL.defaultBlockState(), 3);
+				}
 			}
 			break;
 		}

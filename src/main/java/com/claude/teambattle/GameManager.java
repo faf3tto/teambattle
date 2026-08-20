@@ -86,6 +86,17 @@ public class GameManager
 	private final Set<BlockPos> luckyBlocks = new HashSet<>();
 	private Boolean luckyOverride = null;	// impostato con /battle luckyblocks, null = usa la config
 	private Integer teamSizeOverride = null;	// impostato con /battle teamsize, null = usa la config
+	private Integer luckyCountOverride = null;	// impostato con /battle luckyblocks count
+
+	public int getLuckyCount()
+	{
+		return luckyCountOverride != null ? luckyCountOverride : Config.LUCKY_COUNT.get();
+	}
+
+	public void setLuckyCountOverride(int count)
+	{
+		this.luckyCountOverride = Math.max(1, Math.min(5000, count));
+	}
 
 	public int getTeamSize()
 	{
@@ -291,6 +302,10 @@ public class GameManager
 			}
 		}
 
+		// Avvia la registrazione delle modifiche al mondo per il ripristino
+		if (Config.RESTORE_WORLD.get())
+			Rollback.begin(level);
+
 		// Lucky block sparsi nella zona
 		if (isLuckyEnabled())
 		{
@@ -417,6 +432,8 @@ public class GameManager
 	// ---------------------------------------------------------------
 	public void tick()
 	{
+		Rollback.tickRestore();
+
 		if (!running || server == null)
 			return;
 
@@ -563,7 +580,7 @@ public class GameManager
 	private void placeLuckyBlocks(ServerLevel level, double borderSize)
 	{
 		double radius = borderSize / 2.0 * 0.9;
-		int target = Config.LUCKY_COUNT.get();
+		int target = getLuckyCount();
 
 		for (int i = 0; i < target; i++)
 		{
@@ -583,17 +600,24 @@ public class GameManager
 				if (luckyBlocks.contains(pos))
 					continue;
 
-				level.setBlock(pos, Blocks.GOLD_BLOCK.defaultBlockState(), 3);
+				Rollback.record(level, pos);
+				level.setBlock(pos, LuckyBlockPool.pickRandom(random).defaultBlockState(), 3);
 				luckyBlocks.add(pos.immutable());
 				break;
 			}
 		}
 	}
 
-	// Chiamato dall'evento di rottura blocchi: true se era un lucky block
+	// Chiamato dall'evento di rottura blocchi: true se la rottura va annullata
+	// (cioè: era un lucky block e gli effetti li gestiamo noi)
 	public boolean handleLuckyBreak(ServerPlayer player, ServerLevel level, BlockPos pos)
 	{
 		if (!running || !luckyBlocks.remove(pos))
+			return false;
+
+		// Con gli effetti della mod disattivati, il blocco si rompe normalmente:
+		// se viene da una mod di lucky block, sarà lei a fare il suo spettacolo
+		if (!LuckyBlockPool.useModEffects())
 			return false;
 
 		level.removeBlock(pos, false);
@@ -831,10 +855,11 @@ public class GameManager
 		nextWitherTick = 0;
 		withersSpawned = 0;
 
-		// Rimuovi i lucky block rimasti nel mondo
+		// Rimuovi i lucky block rimasti nel mondo (solo posizioni piazzate
+		// da noi e mai rotte, quindi qualunque tipo di blocco del pool)
 		for (BlockPos pos : luckyBlocks)
 		{
-			if (witherLevel.getBlockState(pos).is(Blocks.GOLD_BLOCK))
+			if (!witherLevel.getBlockState(pos).isAir())
 				witherLevel.removeBlock(pos, false);
 		}
 		luckyBlocks.clear();
@@ -880,6 +905,10 @@ public class GameManager
 		teamDisplayNames.clear();
 		alivePlayers.clear();
 		teamNames.clear();
+
+		// Riporta la zona com'era prima della partita
+		if (Rollback.isRecording() || Rollback.size() > 0)
+			Rollback.startRestore();
 	}
 
 	// ---------------------------------------------------------------
