@@ -16,6 +16,6 @@ if not exist gradlew.bat (
 echo Compilazione in corso (la prima volta scarica le dipendenze, serve internet)...
 call gradlew.bat build
 echo.
-echo Se non ci sono errori qui sopra, la mod e' in build\libs\teambattle-1.4.0.jar
+echo Se non ci sono errori qui sopra, la mod e' in build\libs\teambattle-1.4.1.jar
 echo Copiala nella cartella mods/ del server Forge 1.20.1.
 pause

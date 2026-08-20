@@ -173,7 +173,13 @@ public class LuckyEffects
 				if (baby && ent instanceof Mob mob)
 					mob.setBaby(true);
 				if (charged && ent instanceof net.minecraft.world.entity.monster.Creeper creeper)
-					creeper.getEntityData().set(net.minecraft.world.entity.monster.Creeper.DATA_IS_POWERED, true);
+				{
+					// Il flag "carico" non ha un setter pubblico: si imposta via NBT
+					var tag = new net.minecraft.nbt.CompoundTag();
+					creeper.saveWithoutId(tag);
+					tag.putBoolean("powered", true);
+					creeper.load(tag);
+				}
 			}
 			break;
 		}
