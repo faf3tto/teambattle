@@ -6,6 +6,7 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.level.BlockEvent;
+import net.minecraftforge.event.level.ChunkEvent;
 import net.minecraftforge.event.level.ExplosionEvent;
 import net.minecraftforge.event.entity.living.LivingDestroyBlockEvent;
 import net.minecraft.core.BlockPos;
@@ -49,6 +50,16 @@ public class GameEvents
 	{
 		if (event.getLevel() instanceof ServerLevel level)
 			Rollback.record(level, event.getPos());
+	}
+
+	@SubscribeEvent
+	public static void onChunkLoad(ChunkEvent.Load event)
+	{
+		if (event.getLevel() instanceof ServerLevel level)
+		{
+			var pos = event.getChunk().getPos();
+			GameManager.INSTANCE.onChunkLoad(level, pos.x, pos.z);
+		}
 	}
 
 	@SubscribeEvent

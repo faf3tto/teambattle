@@ -19,6 +19,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.border.WorldBorder;
@@ -27,6 +28,7 @@ import net.minecraft.world.scores.PlayerTeam;
 import net.minecraft.world.scores.Scoreboard;
 import org.joml.Vector3f;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -84,6 +86,15 @@ public class GameManager
 
 	// Lucky block
 	private final Set<BlockPos> luckyBlocks = new HashSet<>();
+	private double luckySpreadRadius = 0;
+	private double luckyDensity = 0;		// blocchi attesi per chunk
+	private int luckyPlaced = 0;
+	private int luckyTargetCap = 0;
+	private int luckyMinCx, luckyMaxCx, luckyMinCz, luckyMaxCz;
+	private final Set<Long> processedLuckyChunks = new HashSet<>();
+	private final ArrayDeque<Long> luckyChunkQueue = new ArrayDeque<>();
+	private List<Long> luckySweep = null;
+	private int luckySweepIndex = 0;
 	private Boolean luckyOverride = null;	// impostato con /battle luckyblocks, null = usa la config
 	private Integer teamSizeOverride = null;	// impostato con /battle teamsize, null = usa la config
 	private Integer luckyCountOverride = null;	// impostato con /battle luckyblocks count
@@ -226,6 +237,11 @@ public class GameManager
 		withersSpawned = 0;
 		spawnedWithers.clear();
 		luckyBlocks.clear();
+		processedLuckyChunks.clear();
+		synchronized (luckyChunkQueue) { luckyChunkQueue.clear(); }
+		luckySweep = null;
+		luckySweepIndex = 0;
+		luckyPlaced = 0;
 
 		border.setCenter(centerX, centerZ);
 		border.setSize(initialSize);
@@ -306,13 +322,34 @@ public class GameManager
 		if (Config.RESTORE_WORLD.get())
 			Rollback.begin(level);
 
-		// Lucky block sparsi nella zona
+		// Lucky block "lazy": nessun chunk viene MAI caricato apposta.
+		// Popoliamo con una certa densità i chunk già in memoria, e quelli
+		// non ancora caricati ricevono i loro blocchi quando il gioco li
+		// carica da solo (cioè quando un giocatore ci si avvicina)
 		if (isLuckyEnabled())
 		{
-			placeLuckyBlocks(level, initialSize);
+			luckySpreadRadius = initialSize / 2.0 * 0.9;
+
+			luckyMinCx = ((int) Math.floor(centerX - luckySpreadRadius)) >> 4;
+			luckyMaxCx = ((int) Math.floor(centerX + luckySpreadRadius)) >> 4;
+			luckyMinCz = ((int) Math.floor(centerZ - luckySpreadRadius)) >> 4;
+			luckyMaxCz = ((int) Math.floor(centerZ + luckySpreadRadius)) >> 4;
+
+			int totalChunks = Math.max(1, (luckyMaxCx - luckyMinCx + 1) * (luckyMaxCz - luckyMinCz + 1));
+			int target = getLuckyCount();
+			luckyDensity = (double) target / totalChunks;
+			luckyTargetCap = target + target / 2 + 1;
+
+			luckySweep = new ArrayList<>(totalChunks);
+			for (int cx = luckyMinCx; cx <= luckyMaxCx; cx++)
+				for (int cz = luckyMinCz; cz <= luckyMaxCz; cz++)
+					luckySweep.add(ChunkPos.asLong(cx, cz));
+			Collections.shuffle(luckySweep, random);
+			luckySweepIndex = 0;
+
 			server.getPlayerList().broadcastSystemMessage(
-				Component.literal("🍀 Modalità LUCKY BLOCK attiva: " + luckyBlocks.size() +
-					" blocchi d'oro sparsi nella zona, con " + LuckyEffects.count() +
+				Component.literal("🍀 Modalità LUCKY BLOCK attiva: circa " + target +
+					" blocchi compariranno nella zona man mano che viene esplorata, con " + LuckyEffects.count() +
 					" effetti possibili. Rompili... se hai coraggio!").withStyle(ChatFormatting.GOLD), false);
 		}
 
@@ -438,6 +475,8 @@ public class GameManager
 			return;
 
 		tickCounter++;
+
+		tickLuckyPlacement();
 
 		// Ogni secondo: glowing dei compagni + annunci countdown
 		if (tickCounter % 20 == 0)
@@ -577,24 +616,99 @@ public class GameManager
 	// ---------------------------------------------------------------
 	// Lucky block
 	// ---------------------------------------------------------------
-	private void placeLuckyBlocks(ServerLevel level, double borderSize)
+	private void tickLuckyPlacement()
 	{
-		double radius = borderSize / 2.0 * 0.9;
-		int target = getLuckyCount();
+		if (!isLuckyEnabled() || luckySweep == null || server == null)
+			return;
 
-		for (int i = 0; i < target; i++)
+		ServerLevel level = server.overworld();
+		int placedBudget = Config.LUCKY_PER_TICK.get();
+
+		// 1) Chunk appena caricati dal gioco (segnalati dall'evento di load)
+		List<Long> fresh = null;
+		synchronized (luckyChunkQueue)
 		{
-			for (int attempt = 0; attempt < 8; attempt++)
+			if (!luckyChunkQueue.isEmpty())
 			{
-				double x = centerX + (random.nextDouble() * 2 - 1) * radius;
-				double z = centerZ + (random.nextDouble() * 2 - 1) * radius;
-				int bx = (int) Math.floor(x);
-				int bz = (int) Math.floor(z);
-				int y = groundY(level, bx, bz);
+				fresh = new ArrayList<>();
+				for (int i = 0; i < 8 && !luckyChunkQueue.isEmpty(); i++)
+					fresh.add(luckyChunkQueue.poll());
+			}
+		}
+		if (fresh != null)
+		{
+			for (Long key : fresh)
+			{
+				if (placedBudget <= 0)
+					break;
+				placedBudget -= processLuckyChunk(level, key);
+			}
+		}
 
+		// 2) Scansione dolce dei chunk della zona GIÀ in memoria: solo
+		//    controlli in RAM, nessun caricamento forzato
+		int inspected = 0;
+		while (inspected < 40 && placedBudget > 0 && luckySweep != null && luckySweepIndex < luckySweep.size())
+		{
+			long key = luckySweep.get(luckySweepIndex++);
+			inspected++;
+
+			if (processedLuckyChunks.contains(key))
+				continue;
+
+			int cx = ChunkPos.getX(key);
+			int cz = ChunkPos.getZ(key);
+			if (!level.hasChunk(cx, cz))
+				continue;	// non caricato: sarà popolato quando qualcuno ci arriva
+
+			placedBudget -= processLuckyChunk(level, key);
+		}
+
+		// Fine giro: se resta zona non coperta, ricomincia la scansione
+		// (economica) per intercettare i chunk caricati nel frattempo
+		if (luckySweep != null && luckySweepIndex >= luckySweep.size())
+		{
+			if (processedLuckyChunks.size() >= luckySweep.size() || luckyPlaced >= luckyTargetCap)
+				luckySweep = null;	// tutta la zona coperta: lavoro finito
+			else
+				luckySweepIndex = 0;
+		}
+	}
+
+	// Popola un singolo chunk (già caricato) secondo la densità: ritorna
+	// quanti blocchi ha piazzato
+	private int processLuckyChunk(ServerLevel level, long key)
+	{
+		if (processedLuckyChunks.contains(key))
+			return 0;
+		processedLuckyChunks.add(key);
+
+		int cx = ChunkPos.getX(key);
+		int cz = ChunkPos.getZ(key);
+		if (!level.hasChunk(cx, cz))
+			return 0;
+
+		int n = (int) Math.floor(luckyDensity);
+		if (random.nextDouble() < luckyDensity - n)
+			n++;
+		n = Math.min(n, Math.max(0, luckyTargetCap - luckyPlaced));
+
+		int placed = 0;
+		for (int i = 0; i < n; i++)
+		{
+			for (int attempt = 0; attempt < 6; attempt++)
+			{
+				int bx = (cx << 4) + random.nextInt(16);
+				int bz = (cz << 4) + random.nextInt(16);
+
+				// I chunk ai bordi sporgono dalla zona: resta dentro
+				if (Math.abs(bx + 0.5 - centerX) > luckySpreadRadius ||
+					Math.abs(bz + 0.5 - centerZ) > luckySpreadRadius)
+					continue;
+
+				int y = level.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, bx, bz);
 				BlockPos pos = new BlockPos(bx, y, bz);
 
-				// Evita acqua/lava e posizioni già usate
 				if (!level.getBlockState(pos.below()).getFluidState().isEmpty())
 					continue;
 				if (luckyBlocks.contains(pos))
@@ -603,8 +717,31 @@ public class GameManager
 				Rollback.record(level, pos);
 				level.setBlock(pos, LuckyBlockPool.pickRandom(random).defaultBlockState(), 3);
 				luckyBlocks.add(pos.immutable());
+				luckyPlaced++;
+				placed++;
 				break;
 			}
+		}
+		return placed;
+	}
+
+	// Chiamato dall'evento di caricamento chunk (può arrivare da altri thread)
+	public void onChunkLoad(ServerLevel level, int cx, int cz)
+	{
+		if (!running || !isLuckyEnabled() || luckySweep == null || server == null)
+			return;
+		if (level != server.overworld())
+			return;
+		if (cx < luckyMinCx || cx > luckyMaxCx || cz < luckyMinCz || cz > luckyMaxCz)
+			return;
+
+		long key = ChunkPos.asLong(cx, cz);
+		if (processedLuckyChunks.contains(key))
+			return;
+
+		synchronized (luckyChunkQueue)
+		{
+			luckyChunkQueue.add(key);
 		}
 	}
 
@@ -863,6 +1000,10 @@ public class GameManager
 				witherLevel.removeBlock(pos, false);
 		}
 		luckyBlocks.clear();
+		processedLuckyChunks.clear();
+		synchronized (luckyChunkQueue) { luckyChunkQueue.clear(); }
+		luckySweep = null;
+		luckyPlaced = 0;
 
 		// Ripristina il bordo com'era prima della partita
 		ServerLevel level = server.overworld();
