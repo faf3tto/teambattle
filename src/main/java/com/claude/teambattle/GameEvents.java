@@ -5,6 +5,8 @@ import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.event.level.BlockEvent;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 public class GameEvents
@@ -20,6 +22,17 @@ public class GameEvents
 	{
 		if (event.phase == TickEvent.Phase.END)
 			GameManager.INSTANCE.tick();
+	}
+
+	@SubscribeEvent
+	public static void onBlockBreak(BlockEvent.BreakEvent event)
+	{
+		if (event.getPlayer() instanceof ServerPlayer player
+			&& event.getLevel() instanceof ServerLevel level
+			&& GameManager.INSTANCE.handleLuckyBreak(player, level, event.getPos()))
+		{
+			event.setCanceled(true);
+		}
 	}
 
 	@SubscribeEvent

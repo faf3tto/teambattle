@@ -26,6 +26,9 @@ public class Config
 	public static final ForgeConfigSpec.BooleanValue WITHER_ENABLED;
 	public static final ForgeConfigSpec.IntValue WITHER_DELAY_SECONDS;
 	public static final ForgeConfigSpec.IntValue WITHER_INTERVAL_SECONDS;
+	public static final ForgeConfigSpec.IntValue TEAM_SIZE;
+	public static final ForgeConfigSpec.BooleanValue LUCKY_ENABLED;
+	public static final ForgeConfigSpec.IntValue LUCKY_COUNT;
 
 	static
 	{
@@ -96,6 +99,18 @@ public class Config
 		WITHER_INTERVAL_SECONDS = b
 			.comment("Secondi tra un Wither e il successivo")
 			.defineInRange("witherIntervalSeconds", 60, 5, 86400);
+
+		TEAM_SIZE = b
+			.comment("Quanti membri per ogni team (1 = tutti contro tutti). L'ultimo team puo' avere meno membri se i giocatori non sono divisibili")
+			.defineInRange("teamSize", 2, 1, 16);
+
+		LUCKY_ENABLED = b
+			.comment("Modalita' Lucky Block: all'avvio vengono sparsi blocchi d'oro nella zona; romperli scatena uno dei 500 effetti casuali")
+			.define("luckyBlocksEnabled", false);
+
+		LUCKY_COUNT = b
+			.comment("Quanti lucky block spargere nella zona all'avvio della partita")
+			.defineInRange("luckyBlocksCount", 100, 1, 5000);
 
 		b.pop();
 

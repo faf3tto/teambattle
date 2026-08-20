@@ -20,6 +20,7 @@ import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.level.GameType;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.border.WorldBorder;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.scores.PlayerTeam;
@@ -81,6 +82,31 @@ public class GameManager
 	private ServerBossEvent witherBar = null;
 	private final List<UUID> spawnedWithers = new ArrayList<>();
 
+	// Lucky block
+	private final Set<BlockPos> luckyBlocks = new HashSet<>();
+	private Boolean luckyOverride = null;	// impostato con /battle luckyblocks, null = usa la config
+	private Integer teamSizeOverride = null;	// impostato con /battle teamsize, null = usa la config
+
+	public int getTeamSize()
+	{
+		return teamSizeOverride != null ? teamSizeOverride : Config.TEAM_SIZE.get();
+	}
+
+	public void setTeamSizeOverride(int size)
+	{
+		this.teamSizeOverride = Math.max(1, Math.min(16, size));
+	}
+
+	public boolean isLuckyEnabled()
+	{
+		return luckyOverride != null ? luckyOverride : Config.LUCKY_ENABLED.get();
+	}
+
+	public void setLuckyOverride(boolean enabled)
+	{
+		this.luckyOverride = enabled;
+	}
+
 	// Override del centro impostato con /battle center (null = usa la config)
 	private Config.CenterMode centerOverrideMode = null;
 	private double centerOverrideX = 0, centerOverrideZ = 0;
@@ -129,6 +155,13 @@ public class GameManager
 
 		if (players.size() < 2)
 			return Component.literal("Servono almeno 2 giocatori connessi (non spettatori) per iniziare.");
+
+		final int teamSize = getTeamSize();
+		final int teamCount = (players.size() + teamSize - 1) / teamSize;
+
+		if (teamCount < 2)
+			return Component.literal("Con team da " + teamSize + " servono almeno " + (teamSize + 1) +
+				" giocatori per avere almeno 2 team. Cambia con /battle teamsize <n>.");
 
 		this.server = server;
 		this.gameMaxHealth = maxHealth;
@@ -181,6 +214,7 @@ public class GameManager
 		nextWitherTick = 0;
 		withersSpawned = 0;
 		spawnedWithers.clear();
+		luckyBlocks.clear();
 
 		border.setCenter(centerX, centerZ);
 		border.setSize(initialSize);
@@ -191,7 +225,6 @@ public class GameManager
 		Collections.shuffle(players, random);
 
 		Scoreboard scoreboard = server.getScoreboard();
-		int teamCount = (players.size() + 1) / 2;
 
 		for (int i = 0; i < teamCount; i++)
 		{
@@ -219,7 +252,7 @@ public class GameManager
 		for (int i = 0; i < players.size(); i++)
 		{
 			ServerPlayer p = players.get(i);
-			String teamName = teamNames.get(i / 2);
+			String teamName = teamNames.get(i / teamSize);
 			PlayerTeam team = scoreboard.getPlayerTeam(teamName);
 			if (team != null)
 				scoreboard.addPlayerToTeam(p.getScoreboardName(), team);
@@ -242,20 +275,30 @@ public class GameManager
 			int member = 0;
 			for (int i = 0; i < players.size(); i++)
 			{
-				if (i / 2 != t)
+				if (i / teamSize != t)
 					continue;
 
 				ServerPlayer p = players.get(i);
 
-				// Compagni affiancati di qualche blocco
-				double px = spot[0] + (member * 3);
-				double pz = spot[1];
+				// Compagni disposti in una piccola griglia attorno al punto
+				double px = spot[0] + (member % 3) * 3;
+				double pz = spot[1] + (member / 3) * 3;
 				int py = groundY(level, (int) Math.floor(px), (int) Math.floor(pz));
 
 				preparePlayer(p, maxHealth);
 				p.teleportTo(level, px + 0.5, py, pz + 0.5, random.nextFloat() * 360f, 0f);
 				member++;
 			}
+		}
+
+		// Lucky block sparsi nella zona
+		if (isLuckyEnabled())
+		{
+			placeLuckyBlocks(level, initialSize);
+			server.getPlayerList().broadcastSystemMessage(
+				Component.literal("🍀 Modalità LUCKY BLOCK attiva: " + luckyBlocks.size() +
+					" blocchi d'oro sparsi nella zona, con " + LuckyEffects.count() +
+					" effetti possibili. Rompili... se hai coraggio!").withStyle(ChatFormatting.GOLD), false);
 		}
 
 		// Avvia il restringimento della barriera
@@ -295,7 +338,8 @@ public class GameManager
 				teamDisplayNames.get(name).copy().append(Component.literal(": " + members).withStyle(ChatFormatting.WHITE)), false);
 		}
 
-		return Component.literal("Partita avviata con " + players.size() + " giocatori in " + teamCount + " team.");
+		return Component.literal("Partita avviata con " + players.size() + " giocatori in " + teamCount +
+			" team da " + teamSize + (teamSize == 1 ? " (tutti contro tutti)." : " membri."));
 	}
 
 	private void preparePlayer(ServerPlayer p, double maxHealth)
@@ -511,6 +555,50 @@ public class GameManager
 					level.sendParticles(p, ZONE_PARTICLE, false, x, py, z, 1, 0, 0.6, 0, 0);
 			}
 		}
+	}
+
+	// ---------------------------------------------------------------
+	// Lucky block
+	// ---------------------------------------------------------------
+	private void placeLuckyBlocks(ServerLevel level, double borderSize)
+	{
+		double radius = borderSize / 2.0 * 0.9;
+		int target = Config.LUCKY_COUNT.get();
+
+		for (int i = 0; i < target; i++)
+		{
+			for (int attempt = 0; attempt < 8; attempt++)
+			{
+				double x = centerX + (random.nextDouble() * 2 - 1) * radius;
+				double z = centerZ + (random.nextDouble() * 2 - 1) * radius;
+				int bx = (int) Math.floor(x);
+				int bz = (int) Math.floor(z);
+				int y = groundY(level, bx, bz);
+
+				BlockPos pos = new BlockPos(bx, y, bz);
+
+				// Evita acqua/lava e posizioni già usate
+				if (!level.getBlockState(pos.below()).getFluidState().isEmpty())
+					continue;
+				if (luckyBlocks.contains(pos))
+					continue;
+
+				level.setBlock(pos, Blocks.GOLD_BLOCK.defaultBlockState(), 3);
+				luckyBlocks.add(pos.immutable());
+				break;
+			}
+		}
+	}
+
+	// Chiamato dall'evento di rottura blocchi: true se era un lucky block
+	public boolean handleLuckyBreak(ServerPlayer player, ServerLevel level, BlockPos pos)
+	{
+		if (!running || !luckyBlocks.remove(pos))
+			return false;
+
+		level.removeBlock(pos, false);
+		LuckyEffects.trigger(level, player, pos);
+		return true;
 	}
 
 	// ---------------------------------------------------------------
@@ -742,6 +830,14 @@ public class GameManager
 		zoneClosedTick = 0;
 		nextWitherTick = 0;
 		withersSpawned = 0;
+
+		// Rimuovi i lucky block rimasti nel mondo
+		for (BlockPos pos : luckyBlocks)
+		{
+			if (witherLevel.getBlockState(pos).is(Blocks.GOLD_BLOCK))
+				witherLevel.removeBlock(pos, false);
+		}
+		luckyBlocks.clear();
 
 		// Ripristina il bordo com'era prima della partita
 		ServerLevel level = server.overworld();

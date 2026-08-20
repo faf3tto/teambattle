@@ -4,7 +4,7 @@ license="MIT"
 
 [[mods]]
 modId="teambattle"
-version="1.2.0"
+version="1.4.0"
 displayName="Team Battle"
 authors="Claude"
 description='''

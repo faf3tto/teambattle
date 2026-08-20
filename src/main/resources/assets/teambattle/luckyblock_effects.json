@@ -1,0 +1,3485 @@
+[
+{
+"m": "Che brillino! 3 diamanti!",
+"t": "give",
+"i": "minecraft:diamond",
+"c": 3
+},
+{
+"m": "Sei ricco! 8 diamanti!",
+"t": "give",
+"i": "minecraft:diamond",
+"c": 8
+},
+{
+"m": "GIACKPOT di 16 diamanti!",
+"t": "give",
+"i": "minecraft:diamond",
+"c": 16
+},
+{
+"m": "Verdi come l'invidia dei tuoi nemici: 5 smeraldi!",
+"t": "give",
+"i": "minecraft:emerald",
+"c": 5
+},
+{
+"m": "Un tesoro di 12 smeraldi!",
+"t": "give",
+"i": "minecraft:emerald",
+"c": 12
+},
+{
+"m": "Luccicano: 6 lingotti d'oro!",
+"t": "give",
+"i": "minecraft:gold_ingot",
+"c": 6
+},
+{
+"m": "Una fortuna: 20 lingotti d'oro!",
+"t": "give",
+"i": "minecraft:gold_ingot",
+"c": 20
+},
+{
+"m": "Solidi: 8 lingotti di ferro!",
+"t": "give",
+"i": "minecraft:iron_ingot",
+"c": 8
+},
+{
+"m": "Una fonderia intera: 24 lingotti di ferro!",
+"t": "give",
+"i": "minecraft:iron_ingot",
+"c": 24
+},
+{
+"m": "IL premio: lingotto di netherite!",
+"t": "give",
+"i": "minecraft:netherite_ingot",
+"c": 1
+},
+{
+"m": "Roba rara: 2 detriti antichi!",
+"t": "give",
+"i": "minecraft:ancient_debris",
+"c": 2
+},
+{
+"m": "Croccanti: 2 mele d'oro!",
+"t": "give",
+"i": "minecraft:golden_apple",
+"c": 2
+},
+{
+"m": "Un frutteto dorato: 5 mele d'oro!",
+"t": "give",
+"i": "minecraft:golden_apple",
+"c": 5
+},
+{
+"m": "LEGGENDARIA! Una mela di Notch!",
+"t": "give",
+"i": "minecraft:enchanted_golden_apple",
+"c": 1
+},
+{
+"m": "Teletrasporto in tasca: 4 perle di ender!",
+"t": "give",
+"i": "minecraft:ender_pearl",
+"c": 4
+},
+{
+"m": "Scorta di 10 perle di ender!",
+"t": "give",
+"i": "minecraft:ender_pearl",
+"c": 10
+},
+{
+"m": "Ancora calde: 4 verghe di blaze!",
+"t": "give",
+"i": "minecraft:blaze_rod",
+"c": 4
+},
+{
+"m": "Maneggiare con cura: 5 TNT!",
+"t": "give",
+"i": "minecraft:tnt",
+"c": 5
+},
+{
+"m": "Un arsenale di 16 TNT!",
+"t": "give",
+"i": "minecraft:tnt",
+"c": 16
+},
+{
+"m": "Faretra piena: 32 frecce!",
+"t": "give",
+"i": "minecraft:arrow",
+"c": 32
+},
+{
+"m": "Pioggia di 64 frecce!",
+"t": "give",
+"i": "minecraft:arrow",
+"c": 64
+},
+{
+"m": "Cena servita: 16 bistecche!",
+"t": "give",
+"i": "minecraft:cooked_beef",
+"c": 16
+},
+{
+"m": "Grigliata di 32 bistecche!",
+"t": "give",
+"i": "minecraft:cooked_beef",
+"c": 32
+},
+{
+"m": "Vista da falco: 12 carote d'oro!",
+"t": "give",
+"i": "minecraft:golden_carrot",
+"c": 12
+},
+{
+"m": "Il fornaio ringrazia: 10 pagnotte!",
+"t": "give",
+"i": "minecraft:bread",
+"c": 10
+},
+{
+"m": "Buon compleanno! Ecco 3 torte!",
+"t": "give",
+"i": "minecraft:cake",
+"c": 3
+},
+{
+"m": "Merenda: 24 biscotti!",
+"t": "give",
+"i": "minecraft:cookie",
+"c": 24
+},
+{
+"m": "Dura come te: 8 ossidiana!",
+"t": "give",
+"i": "minecraft:obsidian",
+"c": 8
+},
+{
+"m": "Un bunker di 16 ossidiana!",
+"t": "give",
+"i": "minecraft:obsidian",
+"c": 16
+},
+{
+"m": "Appiccicose: 8 ragnatele!",
+"t": "give",
+"i": "minecraft:cobweb",
+"c": 8
+},
+{
+"m": "Si sale: 16 scale a pioli!",
+"t": "give",
+"i": "minecraft:ladder",
+"c": 16
+},
+{
+"m": "MLG pronto: secchio d'acqua!",
+"t": "give",
+"i": "minecraft:water_bucket",
+"c": 1
+},
+{
+"m": "Bollente: secchio di lava!",
+"t": "give",
+"i": "minecraft:lava_bucket",
+"c": 1
+},
+{
+"m": "Contro ogni veleno: secchio di latte!",
+"t": "give",
+"i": "minecraft:milk_bucket",
+"c": 1
+},
+{
+"m": "Sapienza liquida: 16 bottiglie di esperienza!",
+"t": "give",
+"i": "minecraft:experience_bottle",
+"c": 16
+},
+{
+"m": "Una seconda vita: totem dell'immortalità!",
+"t": "give",
+"i": "minecraft:totem_of_undying",
+"c": 1
+},
+{
+"m": "Difenditi: scudo!",
+"t": "give",
+"i": "minecraft:shield",
+"c": 1
+},
+{
+"m": "Carica e spara: balestra!",
+"t": "give",
+"i": "minecraft:crossbow",
+"c": 1
+},
+{
+"m": "Robin Hood approva: arco!",
+"t": "give",
+"i": "minecraft:bow",
+"c": 1
+},
+{
+"m": "Pesca i nemici: canna da pesca!",
+"t": "give",
+"i": "minecraft:fishing_rod",
+"c": 1
+},
+{
+"m": "Piromane dentro: acciarino!",
+"t": "give",
+"i": "minecraft:flint_and_steel",
+"c": 1
+},
+{
+"m": "Taglia corto: cesoie!",
+"t": "give",
+"i": "minecraft:shears",
+"c": 1
+},
+{
+"m": "Manca solo il cavallo: sella!",
+"t": "give",
+"i": "minecraft:saddle",
+"c": 1
+},
+{
+"m": "Dai un nome alle cose: 2 targhetta!",
+"t": "give",
+"i": "minecraft:name_tag",
+"c": 2
+},
+{
+"m": "Rimbalzanti: 12 palle di slime!",
+"t": "give",
+"i": "minecraft:slime_ball",
+"c": 12
+},
+{
+"m": "Battaglia! Ecco 32 palle di neve!",
+"t": "give",
+"i": "minecraft:snowball",
+"c": 32
+},
+{
+"m": "Frittata in arrivo: 16 uova!",
+"t": "give",
+"i": "minecraft:egg",
+"c": 16
+},
+{
+"m": "Per il tuo cane: 16 ossa!",
+"t": "give",
+"i": "minecraft:bone",
+"c": 16
+},
+{
+"m": "Fili del destino: 16 corde!",
+"t": "give",
+"i": "minecraft:string",
+"c": 16
+},
+{
+"m": "Esplosiva: 12 polvere da sparo!",
+"t": "give",
+"i": "minecraft:gunpowder",
+"c": 12
+},
+{
+"m": "Ti guardano: 4 occhi di ender!",
+"t": "give",
+"i": "minecraft:ender_eye",
+"c": 4
+},
+{
+"m": "Rarità dall'End: 2 gusci di shulker!",
+"t": "give",
+"i": "minecraft:shulker_shell",
+"c": 2
+},
+{
+"m": "SI VOLA! Un paio di elitre!",
+"t": "give",
+"i": "minecraft:elytra",
+"c": 1
+},
+{
+"m": "Poseidone ti dona un tridente!",
+"t": "give",
+"i": "minecraft:trident",
+"c": 1
+},
+{
+"m": "Interi! Ben 2 blocchi di diamante!",
+"t": "give",
+"i": "minecraft:diamond_block",
+"c": 2
+},
+{
+"m": "Il lucky block si moltiplica: 4 blocchi d'oro!",
+"t": "give",
+"i": "minecraft:gold_block",
+"c": 4
+},
+{
+"m": "Pesanti: 4 blocchi di ferro!",
+"t": "give",
+"i": "minecraft:iron_block",
+"c": 4
+},
+{
+"m": "Massiccio: blocco di smeraldo!",
+"t": "give",
+"i": "minecraft:emerald_block",
+"c": 1
+},
+{
+"m": "Assorbenti: 6 spugne!",
+"t": "give",
+"i": "minecraft:sponge",
+"c": 6
+},
+{
+"m": "Dolcezza autunnale: 8 torte di zucca!",
+"t": "give",
+"i": "minecraft:pumpkin_pie",
+"c": 8
+},
+{
+"m": "Dolcissime: 4 bottiglie di miele!",
+"t": "give",
+"i": "minecraft:honey_bottle",
+"c": 4
+},
+{
+"m": "Viola scintillante: 12 schegge di ametista!",
+"t": "give",
+"i": "minecraft:amethyst_shard",
+"c": 12
+},
+{
+"m": "Dal profondo: 3 schegge d'eco!",
+"t": "give",
+"i": "minecraft:echo_shard",
+"c": 3
+},
+{
+"m": "Pulsante: cuore del mare!",
+"t": "give",
+"i": "minecraft:heart_of_the_sea",
+"c": 1
+},
+{
+"m": "Il mare ti premia: 3 conchiglie di nautilus!",
+"t": "give",
+"i": "minecraft:nautilus_shell",
+"c": 3
+},
+{
+"m": "Alito potente: 3 respiri di drago!",
+"t": "give",
+"i": "minecraft:dragon_breath",
+"c": 3
+},
+{
+"m": "Ali di incubo: 4 membrane di phantom!",
+"t": "give",
+"i": "minecraft:phantom_membrane",
+"c": 4
+},
+{
+"m": "Festa! Ecco 16 razzi pirotecnici!",
+"t": "give",
+"i": "minecraft:firework_rocket",
+"c": 16
+},
+{
+"m": "Deposito segreto: cassa di ender!",
+"t": "give",
+"i": "minecraft:ender_chest",
+"c": 1
+},
+{
+"m": "Pesante regalo: incudine!",
+"t": "give",
+"i": "minecraft:anvil",
+"c": 1
+},
+{
+"m": "Magia portatile: tavolo da incantesimi!",
+"t": "give",
+"i": "minecraft:enchanting_table",
+"c": 1
+},
+{
+"m": "Una lama scritta nelle stelle: \"Spada del Destino\"!",
+"t": "give",
+"i": "minecraft:diamond_sword",
+"c": 1,
+"n": "Spada del Destino",
+"e": [
+[
+"minecraft:sharpness",
+4
+],
+[
+"minecraft:fire_aspect",
+1
+]
+]
+},
+{
+"m": "Morso letale: \"Zanna del Drago\"!",
+"t": "give",
+"i": "minecraft:diamond_sword",
+"c": 1,
+"n": "Zanna del Drago",
+"e": [
+[
+"minecraft:sharpness",
+5
+],
+[
+"minecraft:knockback",
+2
+]
+]
+},
+{
+"m": "Non è bello ma porta bene: \"Spadino Arrugginito Fortunato\"!",
+"t": "give",
+"i": "minecraft:iron_sword",
+"c": 1,
+"n": "Spadino Arrugginito Fortunato",
+"e": [
+[
+"minecraft:sharpness",
+1
+],
+[
+"minecraft:unbreaking",
+3
+]
+]
+},
+{
+"m": "Tutto ciò che tocca brucia: \"Lama del Re Mida\"!",
+"t": "give",
+"i": "minecraft:golden_sword",
+"c": 1,
+"n": "Lama del Re Mida",
+"e": [
+[
+"minecraft:fire_aspect",
+2
+],
+[
+"minecraft:looting",
+3
+]
+]
+},
+{
+"m": "Argomento definitivo: \"Fine della Discussione\"!",
+"t": "give",
+"i": "minecraft:netherite_sword",
+"c": 1,
+"n": "Fine della Discussione",
+"e": [
+[
+"minecraft:sharpness",
+5
+]
+]
+},
+{
+"m": "Taglia alberi e non solo: \"Ascia del Boscaiolo Furioso\"!",
+"t": "give",
+"i": "minecraft:diamond_axe",
+"c": 1,
+"n": "Ascia del Boscaiolo Furioso",
+"e": [
+[
+"minecraft:sharpness",
+4
+],
+[
+"minecraft:efficiency",
+4
+]
+]
+},
+{
+"m": "Scava come un ossesso: \"Piccone del Minatore Folle\"!",
+"t": "give",
+"i": "minecraft:diamond_pickaxe",
+"c": 1,
+"n": "Piccone del Minatore Folle",
+"e": [
+[
+"minecraft:efficiency",
+5
+],
+[
+"minecraft:fortune",
+3
+]
+]
+},
+{
+"m": "Le Alpi tremano: \"Spaccamontagne\"!",
+"t": "give",
+"i": "minecraft:diamond_pickaxe",
+"c": 1,
+"n": "Spaccamontagne",
+"e": [
+[
+"minecraft:efficiency",
+4
+],
+[
+"minecraft:unbreaking",
+3
+]
+]
+},
+{
+"m": "Per scavare fosse ai nemici: \"Palettona Sacra\"!",
+"t": "give",
+"i": "minecraft:diamond_shovel",
+"c": 1,
+"n": "Palettona Sacra",
+"e": [
+[
+"minecraft:efficiency",
+5
+]
+]
+},
+{
+"m": "Frecce infinite: \"Arco delle Stelle Cadenti\"!",
+"t": "give",
+"i": "minecraft:bow",
+"c": 1,
+"n": "Arco delle Stelle Cadenti",
+"e": [
+[
+"minecraft:power",
+4
+],
+[
+"minecraft:infinity",
+1
+]
+]
+},
+{
+"m": "Colpisce e spinge: \"Sussurro Silenzioso\"!",
+"t": "give",
+"i": "minecraft:bow",
+"c": 1,
+"n": "Sussurro Silenzioso",
+"e": [
+[
+"minecraft:power",
+3
+],
+[
+"minecraft:punch",
+2
+]
+]
+},
+{
+"m": "Trapassa tutto: \"Balestra del Giudizio\"!",
+"t": "give",
+"i": "minecraft:crossbow",
+"c": 1,
+"n": "Balestra del Giudizio",
+"e": [
+[
+"minecraft:quick_charge",
+3
+],
+[
+"minecraft:piercing",
+4
+]
+]
+},
+{
+"m": "Torna sempre indietro: \"Forcone di Nettuno\"!",
+"t": "give",
+"i": "minecraft:trident",
+"c": 1,
+"n": "Forcone di Nettuno",
+"e": [
+[
+"minecraft:loyalty",
+3
+],
+[
+"minecraft:channeling",
+1
+]
+]
+},
+{
+"m": "Proteggi le idee: \"Elmo del Pensatore\"!",
+"t": "give",
+"i": "minecraft:diamond_helmet",
+"c": 1,
+"n": "Elmo del Pensatore",
+"e": [
+[
+"minecraft:protection",
+3
+],
+[
+"minecraft:respiration",
+3
+]
+]
+},
+{
+"m": "Il cuore è al sicuro: \"Corazza del Coraggio\"!",
+"t": "give",
+"i": "minecraft:diamond_chestplate",
+"c": 1,
+"n": "Corazza del Coraggio",
+"e": [
+[
+"minecraft:protection",
+4
+]
+]
+},
+{
+"m": "Per ritirate onorevoli: \"Gambali della Fuga Strategica\"!",
+"t": "give",
+"i": "minecraft:diamond_leggings",
+"c": 1,
+"n": "Gambali della Fuga Strategica",
+"e": [
+[
+"minecraft:protection",
+3
+],
+[
+"minecraft:unbreaking",
+3
+]
+]
+},
+{
+"m": "Atterri sempre in piedi: \"Stivali del Gatto\"!",
+"t": "give",
+"i": "minecraft:diamond_boots",
+"c": 1,
+"n": "Stivali del Gatto",
+"e": [
+[
+"minecraft:feather_falling",
+4
+],
+[
+"minecraft:depth_strider",
+3
+]
+]
+},
+{
+"m": "Eleganza in battaglia: \"Scarpette Dorate della Domenica\"!",
+"t": "give",
+"i": "minecraft:golden_boots",
+"c": 1,
+"n": "Scarpette Dorate della Domenica",
+"e": [
+[
+"minecraft:feather_falling",
+2
+]
+]
+},
+{
+"m": "Vecchia ma affidabile: \"Pettorina del Nonno\"!",
+"t": "give",
+"i": "minecraft:iron_chestplate",
+"c": 1,
+"n": "Pettorina del Nonno",
+"e": [
+[
+"minecraft:protection",
+2
+],
+[
+"minecraft:unbreaking",
+3
+]
+]
+},
+{
+"m": "Regale e ignifuga: \"Corona d'Ombra\"!",
+"t": "give",
+"i": "minecraft:netherite_helmet",
+"c": 1,
+"n": "Corona d'Ombra",
+"e": [
+[
+"minecraft:protection",
+4
+],
+[
+"minecraft:fire_protection",
+4
+]
+]
+},
+{
+"m": "Pesca miracolosa: \"Canna Acchiappa-Nemici\"!",
+"t": "give",
+"i": "minecraft:fishing_rod",
+"c": 1,
+"n": "Canna Acchiappa-Nemici",
+"e": [
+[
+"minecraft:lure",
+3
+],
+[
+"minecraft:luck_of_the_sea",
+3
+]
+]
+},
+{
+"m": "Non si passa: \"Muro Portatile\"!",
+"t": "give",
+"i": "minecraft:shield",
+"c": 1,
+"n": "Muro Portatile",
+"e": [
+[
+"minecraft:unbreaking",
+3
+]
+]
+},
+{
+"m": "Per palati fini: \"Stuzzicadenti Gigante\"!",
+"t": "give",
+"i": "minecraft:diamond_sword",
+"c": 1,
+"n": "Stuzzicadenti Gigante",
+"e": [
+[
+"minecraft:sharpness",
+2
+]
+]
+},
+{
+"m": "Fa poco male ma che umiliazione: \"Bastone della Vergogna\"!",
+"t": "give",
+"i": "minecraft:wooden_sword",
+"c": 1,
+"n": "Bastone della Vergogna",
+"e": [
+[
+"minecraft:knockback",
+5
+]
+]
+},
+{
+"m": "Credici forte: \"Bacchetta Magica (forse)\"!",
+"t": "give",
+"i": "minecraft:stick",
+"c": 1,
+"n": "Bacchetta Magica (forse)",
+"e": [
+[
+"minecraft:knockback",
+3
+]
+]
+},
+{
+"m": "Tecnologia suina: \"Telecomando per Maiali\"!",
+"t": "give",
+"i": "minecraft:carrot_on_a_stick",
+"c": 1,
+"n": "Telecomando per Maiali",
+"e": [
+[
+"minecraft:unbreaking",
+3
+]
+]
+},
+{
+"m": "Set completo di armatura di ferro!",
+"t": "chest",
+"loot": [
+{
+"i": "minecraft:iron_helmet",
+"c": 1
+},
+{
+"i": "minecraft:iron_chestplate",
+"c": 1
+},
+{
+"i": "minecraft:iron_leggings",
+"c": 1
+},
+{
+"i": "minecraft:iron_boots",
+"c": 1
+}
+]
+},
+{
+"m": "Set completo di armatura di oro!",
+"t": "chest",
+"loot": [
+{
+"i": "minecraft:golden_helmet",
+"c": 1
+},
+{
+"i": "minecraft:golden_chestplate",
+"c": 1
+},
+{
+"i": "minecraft:golden_leggings",
+"c": 1
+},
+{
+"i": "minecraft:golden_boots",
+"c": 1
+}
+]
+},
+{
+"m": "Set completo di armatura di maglia!",
+"t": "chest",
+"loot": [
+{
+"i": "minecraft:chainmail_helmet",
+"c": 1
+},
+{
+"i": "minecraft:chainmail_chestplate",
+"c": 1
+},
+{
+"i": "minecraft:chainmail_leggings",
+"c": 1
+},
+{
+"i": "minecraft:chainmail_boots",
+"c": 1
+}
+]
+},
+{
+"m": "Set completo di armatura di cuoio!",
+"t": "chest",
+"loot": [
+{
+"i": "minecraft:leather_helmet",
+"c": 1
+},
+{
+"i": "minecraft:leather_chestplate",
+"c": 1
+},
+{
+"i": "minecraft:leather_leggings",
+"c": 1
+},
+{
+"i": "minecraft:leather_boots",
+"c": 1
+}
+]
+},
+{
+"m": "Uno zombie!",
+"t": "mob",
+"i": "minecraft:zombie",
+"c": 1
+},
+{
+"m": "Un gruppetto di 4 zombie!",
+"t": "mob",
+"i": "minecraft:zombie",
+"c": 4
+},
+{
+"m": "Un'orda di 8 zombie!",
+"t": "mob",
+"i": "minecraft:zombie",
+"c": 8
+},
+{
+"m": "Due 2 scheletri!",
+"t": "mob",
+"i": "minecraft:skeleton",
+"c": 2
+},
+{
+"m": "Una banda di 6 scheletri!",
+"t": "mob",
+"i": "minecraft:skeleton",
+"c": 6
+},
+{
+"m": "Ssssss... un creeper!",
+"t": "mob",
+"i": "minecraft:creeper",
+"c": 1
+},
+{
+"m": "Tre 3 creeper!",
+"t": "mob",
+"i": "minecraft:creeper",
+"c": 3
+},
+{
+"m": "Aracnofobia: 3 ragni!",
+"t": "mob",
+"i": "minecraft:spider",
+"c": 3
+},
+{
+"m": "Piccoli e velenosi: 4 ragni delle caverne!",
+"t": "mob",
+"i": "minecraft:cave_spider",
+"c": 4
+},
+{
+"m": "Una strega!",
+"t": "mob",
+"i": "minecraft:witch",
+"c": 1
+},
+{
+"m": "Gelatina ovunque: 5 slime!",
+"t": "mob",
+"i": "minecraft:slime",
+"c": 5
+},
+{
+"m": "Bollenti: 4 cubi di magma!",
+"t": "mob",
+"i": "minecraft:magma_cube",
+"c": 4
+},
+{
+"m": "Fuoco dal cielo: 2 blaze!",
+"t": "mob",
+"i": "minecraft:blaze",
+"c": 2
+},
+{
+"m": "Piangerà lui o piangerai tu? Un ghast!",
+"t": "mob",
+"i": "minecraft:ghast",
+"c": 1
+},
+{
+"m": "Non guardarli negli occhi: 2 enderman!",
+"t": "mob",
+"i": "minecraft:enderman",
+"c": 2
+},
+{
+"m": "Un'infestazione di 10 pesciolini d'argento!",
+"t": "mob",
+"i": "minecraft:silverfish",
+"c": 10
+},
+{
+"m": "Fastidiosissimi: 4 vex!",
+"t": "mob",
+"i": "minecraft:vex",
+"c": 4
+},
+{
+"m": "Un drappello di 3 predoni!",
+"t": "mob",
+"i": "minecraft:pillager",
+"c": 3
+},
+{
+"m": "Asce in arrivo: 2 vindicator!",
+"t": "mob",
+"i": "minecraft:vindicator",
+"c": 2
+},
+{
+"m": "Un evocatore!",
+"t": "mob",
+"i": "minecraft:evoker",
+"c": 1
+},
+{
+"m": "TERREMOTO! Un devastatore!",
+"t": "mob",
+"i": "minecraft:ravager",
+"c": 1
+},
+{
+"m": "Dovevi dormire di più: 3 phantom!",
+"t": "mob",
+"i": "minecraft:phantom",
+"c": 3
+},
+{
+"m": "Dal fondo del mare: 4 annegati!",
+"t": "mob",
+"i": "minecraft:drowned",
+"c": 4
+},
+{
+"m": "Sabbia e fame: 4 husk!",
+"t": "mob",
+"i": "minecraft:husk",
+"c": 4
+},
+{
+"m": "Frecce gelide: 3 vaganti!",
+"t": "mob",
+"i": "minecraft:stray",
+"c": 3
+},
+{
+"m": "Un piglin bruto!",
+"t": "mob",
+"i": "minecraft:piglin_brute",
+"c": 1
+},
+{
+"m": "Carica suina: 2 hoglin!",
+"t": "mob",
+"i": "minecraft:hoglin",
+"c": 2
+},
+{
+"m": "Uno zoglin!",
+"t": "mob",
+"i": "minecraft:zoglin",
+"c": 1
+},
+{
+"m": "Occhi laser: 2 guardiani!",
+"t": "mob",
+"i": "minecraft:guardian",
+"c": 2
+},
+{
+"m": "Levitazione in regalo: 2 shulker!",
+"t": "mob",
+"i": "minecraft:shulker",
+"c": 2
+},
+{
+"m": "Oink oink! Ecco 6 maiali!",
+"t": "mob",
+"i": "minecraft:pig",
+"c": 6
+},
+{
+"m": "Muuu: 5 mucche!",
+"t": "mob",
+"i": "minecraft:cow",
+"c": 5
+},
+{
+"m": "Un pollaio di 10 galline!",
+"t": "mob",
+"i": "minecraft:chicken",
+"c": 10
+},
+{
+"m": "Un gregge di 6 pecore!",
+"t": "mob",
+"i": "minecraft:sheep",
+"c": 6
+},
+{
+"m": "Un fedele cavallo!",
+"t": "mob",
+"i": "minecraft:horse",
+"c": 1
+},
+{
+"m": "Un testardo asino!",
+"t": "mob",
+"i": "minecraft:donkey",
+"c": 1
+},
+{
+"m": "Un branco di 3 lupi!",
+"t": "mob",
+"i": "minecraft:wolf",
+"c": 3
+},
+{
+"m": "Miao: 3 gatti!",
+"t": "mob",
+"i": "minecraft:cat",
+"c": 3
+},
+{
+"m": "Colorati: 3 pappagalli!",
+"t": "mob",
+"i": "minecraft:parrot",
+"c": 3
+},
+{
+"m": "Una cucciolata di 8 conigli!",
+"t": "mob",
+"i": "minecraft:rabbit",
+"c": 8
+},
+{
+"m": "Furbe: 2 volpi!",
+"t": "mob",
+"i": "minecraft:fox",
+"c": 2
+},
+{
+"m": "Coccolosi: 2 panda!",
+"t": "mob",
+"i": "minecraft:panda",
+"c": 2
+},
+{
+"m": "Bzzz: 6 api!",
+"t": "mob",
+"i": "minecraft:bee",
+"c": 6
+},
+{
+"m": "Adorabili: 4 axolotl!",
+"t": "mob",
+"i": "minecraft:axolotl",
+"c": 4
+},
+{
+"m": "Attento alle cornate: 3 capre!",
+"t": "mob",
+"i": "minecraft:goat",
+"c": 3
+},
+{
+"m": "Cra cra: 6 rane!",
+"t": "mob",
+"i": "minecraft:frog",
+"c": 6
+},
+{
+"m": "Un possente golem di ferro!",
+"t": "mob",
+"i": "minecraft:iron_golem",
+"c": 1
+},
+{
+"m": "Un esercito di 4 golem di neve!",
+"t": "mob",
+"i": "minecraft:snow_golem",
+"c": 4
+},
+{
+"m": "Hmm! Un villico!",
+"t": "mob",
+"i": "minecraft:villager",
+"c": 1
+},
+{
+"m": "Un mercante errante!",
+"t": "mob",
+"i": "minecraft:wandering_trader",
+"c": 1
+},
+{
+"m": "Funghi con le zampe: 2 mooshroom!",
+"t": "mob",
+"i": "minecraft:mooshroom",
+"c": 2
+},
+{
+"m": "Inchiostro ovunque: 5 calamari!",
+"t": "mob",
+"i": "minecraft:squid",
+"c": 5
+},
+{
+"m": "Una caverna intera di 12 pipistrelli!",
+"t": "mob",
+"i": "minecraft:bat",
+"c": 12
+},
+{
+"m": "Pruriginosi: 6 endermiti!",
+"t": "mob",
+"i": "minecraft:endermite",
+"c": 6
+},
+{
+"m": "Ecco \"Gino lo Zombie\"! Ha anche un nome: rispettalo.",
+"t": "mob",
+"i": "minecraft:zombie",
+"c": 1,
+"n": "Gino lo Zombie"
+},
+{
+"m": "Ecco \"Boomer\"! Il suo nome dice tutto.",
+"t": "mob",
+"i": "minecraft:creeper",
+"c": 1,
+"n": "Boomer"
+},
+{
+"m": "Ecco \"Ossobuco\"! Cecchino di famiglia.",
+"t": "mob",
+"i": "minecraft:skeleton",
+"c": 1,
+"n": "Ossobuco"
+},
+{
+"m": "Ecco \"Gallina Rita\"! Fa uova d'oro. Forse.",
+"t": "mob",
+"i": "minecraft:chicken",
+"c": 1,
+"n": "Gallina Rita"
+},
+{
+"m": "Ecco \"Porchetto Astronauta\"! Sognava le stelle.",
+"t": "mob",
+"i": "minecraft:pig",
+"c": 1,
+"n": "Porchetto Astronauta"
+},
+{
+"m": "Ecco \"Slenderino\"! Non fissarlo. Davvero.",
+"t": "mob",
+"i": "minecraft:enderman",
+"c": 1,
+"n": "Slenderino"
+},
+{
+"m": "Ecco \"Nonna Malvagia\"! Le sue pozioni non sono tisane.",
+"t": "mob",
+"i": "minecraft:witch",
+"c": 1,
+"n": "Nonna Malvagia"
+},
+{
+"m": "Ecco \"Bulldozer\"! La demolizione è servita.",
+"t": "mob",
+"i": "minecraft:ravager",
+"c": 1,
+"n": "Bulldozer"
+},
+{
+"m": "Ecco \"Guardiano Beppe\"! È dalla tua parte... si spera.",
+"t": "mob",
+"i": "minecraft:iron_golem",
+"c": 1,
+"n": "Guardiano Beppe"
+},
+{
+"m": "Ecco \"Fido il Feroce\"! Vuole solo giocare. Coi tuoi nemici.",
+"t": "mob",
+"i": "minecraft:wolf",
+"c": 1,
+"n": "Fido il Feroce"
+},
+{
+"m": "Ecco \"Johnny\"! HERE'S JOHNNY!",
+"t": "mob",
+"i": "minecraft:vindicator",
+"c": 1,
+"n": "Johnny"
+},
+{
+"m": "Ecco \"Piagnone\"! Non è triste, è tattico.",
+"t": "mob",
+"i": "minecraft:ghast",
+"c": 1,
+"n": "Piagnone"
+},
+{
+"m": "Un CREEPER CARICO! Scappa!",
+"t": "mob",
+"i": "minecraft:creeper",
+"c": 1,
+"charged": true
+},
+{
+"m": "Zombie bambini: piccoli, veloci, cattivissimi!",
+"t": "mob",
+"i": "minecraft:zombie",
+"c": 4,
+"baby": true
+},
+{
+"m": "Mini-slime party!",
+"t": "mob",
+"i": "minecraft:slime",
+"c": 8,
+"baby": true
+},
+{
+"m": "Cuccioli di lupo!",
+"t": "mob",
+"i": "minecraft:wolf",
+"c": 4,
+"baby": true
+},
+{
+"m": "Velocità fulminea!",
+"t": "fx",
+"i": "minecraft:speed",
+"d": 30,
+"a": 1
+},
+{
+"m": "Sei una scheggia!",
+"t": "fx",
+"i": "minecraft:speed",
+"d": 60,
+"a": 2
+},
+{
+"m": "Forza da orso!",
+"t": "fx",
+"i": "minecraft:strength",
+"d": 30,
+"a": 1
+},
+{
+"m": "Muscoli d'acciaio!",
+"t": "fx",
+"i": "minecraft:strength",
+"d": 45,
+"a": 0
+},
+{
+"m": "Le ferite si chiudono da sole!",
+"t": "fx",
+"i": "minecraft:regeneration",
+"d": 20,
+"a": 1
+},
+{
+"m": "Cuori dorati extra!",
+"t": "fx",
+"i": "minecraft:absorption",
+"d": 60,
+"a": 2
+},
+{
+"m": "Pelle di pietra!",
+"t": "fx",
+"i": "minecraft:resistance",
+"d": 40,
+"a": 1
+},
+{
+"m": "La lava è la tua vasca!",
+"t": "fx",
+"i": "minecraft:fire_resistance",
+"d": 90,
+"a": 0
+},
+{
+"m": "Salti come un canguro!",
+"t": "fx",
+"i": "minecraft:jump_boost",
+"d": 45,
+"a": 2
+},
+{
+"m": "Nessuno ti vede!",
+"t": "fx",
+"i": "minecraft:invisibility",
+"d": 30,
+"a": 0
+},
+{
+"m": "Occhi di gufo!",
+"t": "fx",
+"i": "minecraft:night_vision",
+"d": 120,
+"a": 0
+},
+{
+"m": "Branchie temporanee!",
+"t": "fx",
+"i": "minecraft:water_breathing",
+"d": 90,
+"a": 0
+},
+{
+"m": "Mani veloci!",
+"t": "fx",
+"i": "minecraft:haste",
+"d": 60,
+"a": 1
+},
+{
+"m": "La fortuna ti sorride ancora!",
+"t": "fx",
+"i": "minecraft:luck",
+"d": 180,
+"a": 1
+},
+{
+"m": "Nuoti come un delfino!",
+"t": "fx",
+"i": "minecraft:dolphins_grace",
+"d": 60,
+"a": 0
+},
+{
+"m": "Eroe del villaggio!",
+"t": "fx",
+"i": "minecraft:hero_of_the_village",
+"d": 180,
+"a": 0
+},
+{
+"m": "Pancia piena per sempre... o quasi!",
+"t": "fx",
+"i": "minecraft:saturation",
+"d": 10,
+"a": 2
+},
+{
+"m": "Vita bonus!",
+"t": "fx",
+"i": "minecraft:health_boost",
+"d": 120,
+"a": 2
+},
+{
+"m": "Gambe di piombo...",
+"t": "fx",
+"i": "minecraft:slowness",
+"d": 20,
+"a": 1
+},
+{
+"m": "Moviola attivata.",
+"t": "fx",
+"i": "minecraft:slowness",
+"d": 30,
+"a": 2
+},
+{
+"m": "Braccia di ricotta.",
+"t": "fx",
+"i": "minecraft:weakness",
+"d": 30,
+"a": 1
+},
+{
+"m": "Qualcosa ti ha morso!",
+"t": "fx",
+"i": "minecraft:poison",
+"d": 10,
+"a": 0
+},
+{
+"m": "Oscurità nelle vene!",
+"t": "fx",
+"i": "minecraft:wither",
+"d": 8,
+"a": 0
+},
+{
+"m": "CHI HA SPENTO LA LUCE?!",
+"t": "fx",
+"i": "minecraft:blindness",
+"d": 15,
+"a": 0
+},
+{
+"m": "Il mondo gira gira gira...",
+"t": "fx",
+"i": "minecraft:nausea",
+"d": 20,
+"a": 0
+},
+{
+"m": "Che fame improvvisa...",
+"t": "fx",
+"i": "minecraft:hunger",
+"d": 30,
+"a": 2
+},
+{
+"m": "Braccia stanchissime.",
+"t": "fx",
+"i": "minecraft:mining_fatigue",
+"d": 40,
+"a": 2
+},
+{
+"m": "SU SU SU! Verso l'infinito!",
+"t": "fx",
+"i": "minecraft:levitation",
+"d": 6,
+"a": 1
+},
+{
+"m": "Il buio ti avvolge.",
+"t": "fx",
+"i": "minecraft:darkness",
+"d": 15,
+"a": 0
+},
+{
+"m": "Tutti sanno dove sei!",
+"t": "fx",
+"i": "minecraft:glowing",
+"d": 60,
+"a": 0
+},
+{
+"m": "Un cattivo presagio...",
+"t": "fx",
+"i": "minecraft:bad_omen",
+"d": 300,
+"a": 0
+},
+{
+"m": "Modalità NINJA: veloce e invisibile!",
+"t": "fxcombo",
+"list": [
+{
+"i": "minecraft:speed",
+"d": 30,
+"a": 1
+},
+{
+"i": "minecraft:invisibility",
+"d": 30,
+"a": 0
+}
+]
+},
+{
+"m": "Modalità TANK: lento ma indistruttibile!",
+"t": "fxcombo",
+"list": [
+{
+"i": "minecraft:resistance",
+"d": 40,
+"a": 2
+},
+{
+"i": "minecraft:slowness",
+"d": 40,
+"a": 1
+}
+]
+},
+{
+"m": "Modalità BERSERKER: forte ma fragile!",
+"t": "fxcombo",
+"list": [
+{
+"i": "minecraft:strength",
+"d": 40,
+"a": 2
+},
+{
+"i": "minecraft:weakness",
+"d": 0,
+"a": 0
+},
+{
+"i": "minecraft:glowing",
+"d": 40,
+"a": 0
+}
+]
+},
+{
+"m": "Modalità CONIGLIO: salti e corri!",
+"t": "fxcombo",
+"list": [
+{
+"i": "minecraft:jump_boost",
+"d": 45,
+"a": 3
+},
+{
+"i": "minecraft:speed",
+"d": 45,
+"a": 1
+}
+]
+},
+{
+"m": "Modalità PALOMBARO: acqua amica!",
+"t": "fxcombo",
+"list": [
+{
+"i": "minecraft:water_breathing",
+"d": 120,
+"a": 0
+},
+{
+"i": "minecraft:dolphins_grace",
+"d": 120,
+"a": 0
+},
+{
+"i": "minecraft:night_vision",
+"d": 120,
+"a": 0
+}
+]
+},
+{
+"m": "Modalità FENICE: il fuoco non ti tocca e rinasci!",
+"t": "fxcombo",
+"list": [
+{
+"i": "minecraft:fire_resistance",
+"d": 90,
+"a": 0
+},
+{
+"i": "minecraft:regeneration",
+"d": 20,
+"a": 1
+}
+]
+},
+{
+"m": "Frullato misterioso: un po' di tutto!",
+"t": "fxcombo",
+"list": [
+{
+"i": "minecraft:speed",
+"d": 20,
+"a": 0
+},
+{
+"i": "minecraft:nausea",
+"d": 20,
+"a": 0
+},
+{
+"i": "minecraft:jump_boost",
+"d": 20,
+"a": 1
+}
+]
+},
+{
+"m": "Maledizione della lumaca luminosa!",
+"t": "fxcombo",
+"list": [
+{
+"i": "minecraft:slowness",
+"d": 30,
+"a": 2
+},
+{
+"i": "minecraft:glowing",
+"d": 30,
+"a": 0
+}
+]
+},
+{
+"m": "REGEN DI ZONA: tutti i vicini guariscono!",
+"t": "fxall",
+"i": "minecraft:regeneration",
+"d": 15,
+"a": 1,
+"r": 25
+},
+{
+"m": "RALLENTY GENERALE: tutti in moviola qui attorno!",
+"t": "fxall",
+"i": "minecraft:slowness",
+"d": 15,
+"a": 1,
+"r": 25
+},
+{
+"m": "FESTA DELLA VELOCITÀ per tutti i presenti!",
+"t": "fxall",
+"i": "minecraft:speed",
+"d": 30,
+"a": 1,
+"r": 25
+},
+{
+"m": "BUIO COLLETTIVO nei dintorni!",
+"t": "fxall",
+"i": "minecraft:blindness",
+"d": 10,
+"a": 0,
+"r": 25
+},
+{
+"m": "Tutti i vicini brillano come lucciole!",
+"t": "fxall",
+"i": "minecraft:glowing",
+"d": 45,
+"a": 0,
+"r": 30
+},
+{
+"m": "Tutti i presenti LEVITANO!",
+"t": "fxall",
+"i": "minecraft:levitation",
+"d": 5,
+"a": 1,
+"r": 20
+},
+{
+"m": "Era una TNT travestita!",
+"t": "tnt",
+"c": 1,
+"fuse": 40
+},
+{
+"m": "TRIPLA TNT! Corri!",
+"t": "tnt",
+"c": 3,
+"fuse": 50
+},
+{
+"m": "CAMPO MINATO ISTANTANEO!",
+"t": "tnt",
+"c": 6,
+"fuse": 70
+},
+{
+"m": "TNT col fusibile corto! SCAPPA!",
+"t": "tnt",
+"c": 1,
+"fuse": 15
+},
+{
+"m": "Zeus non è d'accordo con te.",
+"t": "lightning",
+"c": 1
+},
+{
+"m": "TEMPESTA DI FULMINI!",
+"t": "lightning",
+"c": 4
+},
+{
+"m": "Un fulmine a ciel sereno. Letteralmente.",
+"t": "lightning",
+"c": 2
+},
+{
+"m": "Piove... INCUDINI!",
+"t": "anvils",
+"c": 3
+},
+{
+"m": "GRANDINE DI INCUDINI!",
+"t": "anvils",
+"c": 6
+},
+{
+"m": "Una pioggia di frecce dal cielo!",
+"t": "arrows",
+"c": 15
+},
+{
+"m": "TEMPESTA DI FRECCE!",
+"t": "arrows",
+"c": 30
+},
+{
+"m": "Il pavimento è LAVA!",
+"t": "pool",
+"i": "minecraft:lava",
+"r": 2
+},
+{
+"m": "Piscina improvvisa! Splash!",
+"t": "pool",
+"i": "minecraft:water",
+"r": 3
+},
+{
+"m": "Il pavimento diventa GHIACCIO SCIVOLOSO!",
+"t": "pool",
+"i": "minecraft:blue_ice",
+"r": 4
+},
+{
+"m": "Sabbie mobili sotto i piedi!",
+"t": "pool",
+"i": "minecraft:soul_sand",
+"r": 3
+},
+{
+"m": "Il pavimento diventa... MIELE?",
+"t": "pool",
+"i": "minecraft:honey_block",
+"r": 3
+},
+{
+"m": "Sei in GABBIA DI VETRO! Almeno c'è la vista.",
+"t": "blockring",
+"i": "minecraft:glass"
+},
+{
+"m": "PRIGIONE DI OSSIDIANA! Buono scavo.",
+"t": "blockring",
+"i": "minecraft:obsidian"
+},
+{
+"m": "Murato vivo nella TERRA! Che umiliazione.",
+"t": "blockring",
+"i": "minecraft:dirt"
+},
+{
+"m": "Intrappolato nelle RAGNATELE!",
+"t": "blockring",
+"i": "minecraft:cobweb"
+},
+{
+"m": "Gabbia di GHIACCIO! Brrr!",
+"t": "blockring",
+"i": "minecraft:ice"
+},
+{
+"m": "Non è successo niente. Assolutamente niente.",
+"t": "msg"
+},
+{
+"m": "Il lucky block ti guarda. Tu guardi il lucky block. Nulla accade.",
+"t": "msg"
+},
+{
+"m": "Congratulazioni! Hai vinto... la nostra stima.",
+"t": "msg"
+},
+{
+"m": "Dentro c'era solo aria. Aria fortunata, però.",
+"t": "msg"
+},
+{
+"m": "Il premio è l'amicizia che abbiamo costruito lungo il cammino.",
+"t": "msg"
+},
+{
+"m": "ERRORE 404: fortuna non trovata.",
+"t": "msg"
+},
+{
+"m": "Qualcuno ha già aperto questo blocco prima di te. Che sfortuna.",
+"t": "msg"
+},
+{
+"m": "Il tuo premio è stato spedito. Consegna prevista: mai.",
+"t": "msg"
+},
+{
+"m": "Hai trovato un biglietto: 'IOU una fortuna - firmato: il Destino'.",
+"t": "msg"
+},
+{
+"m": "Il blocco era vuoto, ma il tuo cuore è pieno.",
+"t": "msg"
+},
+{
+"m": "Senti un sussurro: 'dietro di te...'. Scherzo. O forse no.",
+"t": "msg"
+},
+{
+"m": "Un applauso da un pubblico invisibile. Grazie, grazie.",
+"t": "msg"
+},
+{
+"m": "La profezia dice che il prossimo blocco sarà migliore. Forse.",
+"t": "msg"
+},
+{
+"m": "Hai sbloccato: NIENTE (edizione limitata).",
+"t": "msg"
+},
+{
+"m": "Il criceto che genera i premi si è addormentato.",
+"t": "msg"
+},
+{
+"m": "Fortuna in manutenzione. Riprovare più tardi.",
+"t": "msg"
+},
+{
+"m": "Complimenti, sei il visitatore numero 1.000.000! (non c'è premio)",
+"t": "msg"
+},
+{
+"m": "Il blocco conteneva una poesia, ma il vento l'ha portata via.",
+"t": "msg"
+},
+{
+"m": "Da qualche parte, un creeper ha appena pensato a te.",
+"t": "msg"
+},
+{
+"m": "Hai guadagnato 0 diamanti! (arrotondati per difetto)",
+"t": "msg"
+},
+{
+"m": "Il Wither ha messo 'mi piace' alla tua partita.",
+"t": "msg"
+},
+{
+"m": "Attenzione: la fortuna può causare dipendenza.",
+"t": "msg"
+},
+{
+"m": "Un piccione ha rubato il tuo premio. Maledetti piccioni.",
+"t": "msg"
+},
+{
+"m": "Il premio era una sorpresa. SORPRESA: non c'è.",
+"t": "msg"
+},
+{
+"m": "Leggenda dice che chi apre questo blocco... continua a giocare.",
+"t": "msg"
+},
+{
+"m": "Un urlo agghiacciante riecheggia!",
+"t": "sound",
+"i": "minecraft:entity.ghast.scream"
+},
+{
+"m": "Qualcosa ha urlato NEL TUO ORECCHIO!",
+"t": "sound",
+"i": "minecraft:entity.enderman.scream"
+},
+{
+"m": "Quel suono... no, tranquillo, era uno scherzo!",
+"t": "sound",
+"i": "minecraft:entity.wither.spawn"
+},
+{
+"m": "Il ruggito del drago! (ma il drago non c'è... vero?)",
+"t": "sound",
+"i": "minecraft:entity.ender_dragon.growl"
+},
+{
+"m": "SSSSSS... rilassati, era solo un registratore.",
+"t": "sound",
+"i": "minecraft:entity.creeper.primed"
+},
+{
+"m": "Un tuono senza fulmine. Inquietante.",
+"t": "sound",
+"i": "minecraft:entity.lightning_bolt.thunder"
+},
+{
+"m": "Hmm! Hmm! (un villico invisibile ti giudica)",
+"t": "sound",
+"i": "minecraft:entity.villager.ambient"
+},
+{
+"m": "Un gatto fantasma ti fa le fusa.",
+"t": "sound",
+"i": "minecraft:entity.cat.purreow"
+},
+{
+"m": "Un ululato lontano... i lupi sanno.",
+"t": "sound",
+"i": "minecraft:entity.wolf.howl"
+},
+{
+"m": "DING DONG! Ora tutti sanno dove sei.",
+"t": "sound",
+"i": "minecraft:block.bell.use"
+},
+{
+"m": "Suono di level-up! Ma il livello non arriva.",
+"t": "sound",
+"i": "minecraft:entity.player.levelup"
+},
+{
+"m": "Achievement sbloccato: 'Rumore Gratuito'!",
+"t": "sound",
+"i": "minecraft:ui.toast.challenge_complete"
+},
+{
+"m": "Un phantom è morto da qualche parte. Non chiedere.",
+"t": "sound",
+"i": "minecraft:entity.phantom.death"
+},
+{
+"m": "DJ Lucky Block nel mix!",
+"t": "sound",
+"i": "minecraft:music_disc.pigstep"
+},
+{
+"m": "QUEL ruggito. Controlla dietro le spalle.",
+"t": "sound",
+"i": "minecraft:entity.warden.roar"
+},
+{
+"m": "DECOLLO VERTICALE! (con paracadute)",
+"t": "launch",
+"p": 2.5,
+"slowfall": true
+},
+{
+"m": "CATAPULTA UMANA! (senza paracadute, auguri)",
+"t": "launch",
+"p": 1.6
+},
+{
+"m": "SUPER SALTO verso le stelle!",
+"t": "launch",
+"p": 3.2,
+"slowfall": true
+},
+{
+"m": "Saltello imbarazzante.",
+"t": "launch",
+"p": 0.7
+},
+{
+"m": "Teletrasporto casuale! Dove finirai?",
+"t": "tprandom",
+"r": 30
+},
+{
+"m": "TELETRASPORTO LUNGO! Buona fortuna a ritrovarti!",
+"t": "tprandom",
+"r": 80
+},
+{
+"m": "Piccolo salto nello spazio-tempo.",
+"t": "tprandom",
+"r": 12
+},
+{
+"m": "SCAMBIO DI POSTO con un giocatore a caso!",
+"t": "swap"
+},
+{
+"m": "Le coordinate si confondono... sei ALTROVE.",
+"t": "tprandom",
+"r": 50
+},
+{
+"m": "PIOGGIA DORATA di pepite!",
+"t": "rain",
+"i": "minecraft:gold_nugget",
+"c": 20
+},
+{
+"m": "PIOVONO DIAMANTI! Raccogli!",
+"t": "rain",
+"i": "minecraft:diamond",
+"c": 6
+},
+{
+"m": "GRANDINE DI SMERALDI!",
+"t": "rain",
+"i": "minecraft:emerald",
+"c": 10
+},
+{
+"m": "Piovono polli arrosto! Il paradiso esiste.",
+"t": "rain",
+"i": "minecraft:cooked_chicken",
+"c": 12
+},
+{
+"m": "NEVICATA DI BISCOTTI!",
+"t": "rain",
+"i": "minecraft:cookie",
+"c": 20
+},
+{
+"m": "Piove... carne marcia. Che schifo.",
+"t": "rain",
+"i": "minecraft:rotten_flesh",
+"c": 16
+},
+{
+"m": "Piovono patate velenose. Perché?!",
+"t": "rain",
+"i": "minecraft:poisonous_potato",
+"c": 10
+},
+{
+"m": "DILUVIO DI ESPERIENZA!",
+"t": "rain",
+"i": "minecraft:experience_bottle",
+"c": 12
+},
+{
+"m": "Piovono frecce RACCOGLIBILI, stavolta!",
+"t": "rain",
+"i": "minecraft:arrow",
+"c": 25
+},
+{
+"m": "BUFERA DI PALLE DI NEVE!",
+"t": "rain",
+"i": "minecraft:snowball",
+"c": 30
+},
+{
+"m": "Piovono uova! Chi le ha lanciate?!",
+"t": "rain",
+"i": "minecraft:egg",
+"c": 18
+},
+{
+"m": "Piovono pepite di ferro!",
+"t": "rain",
+"i": "minecraft:iron_nugget",
+"c": 25
+},
+{
+"m": "Una CASSA DEL PICNIC!",
+"t": "chest",
+"loot": [
+{
+"i": "minecraft:cooked_beef",
+"c": 8
+},
+{
+"i": "minecraft:bread",
+"c": 6
+},
+{
+"i": "minecraft:cake",
+"c": 1
+},
+{
+"i": "minecraft:sweet_berries",
+"c": 8
+}
+]
+},
+{
+"m": "CASSA DEL GUERRIERO!",
+"t": "chest",
+"loot": [
+{
+"i": "minecraft:iron_sword",
+"c": 1
+},
+{
+"i": "minecraft:shield",
+"c": 1
+},
+{
+"i": "minecraft:cooked_beef",
+"c": 5
+},
+{
+"i": "minecraft:iron_helmet",
+"c": 1
+}
+]
+},
+{
+"m": "CASSA DELL'ARCIERE!",
+"t": "chest",
+"loot": [
+{
+"i": "minecraft:bow",
+"c": 1
+},
+{
+"i": "minecraft:arrow",
+"c": 32
+},
+{
+"i": "minecraft:leather_chestplate",
+"c": 1
+}
+]
+},
+{
+"m": "CASSA DEL MINATORE!",
+"t": "chest",
+"loot": [
+{
+"i": "minecraft:iron_pickaxe",
+"c": 1
+},
+{
+"i": "minecraft:torch",
+"c": 16
+},
+{
+"i": "minecraft:bread",
+"c": 4
+},
+{
+"i": "minecraft:ladder",
+"c": 8
+}
+]
+},
+{
+"m": "CASSA DELL'ALCHIMISTA!",
+"t": "chest",
+"loot": [
+{
+"i": "minecraft:brewing_stand",
+"c": 1
+},
+{
+"i": "minecraft:blaze_powder",
+"c": 4
+},
+{
+"i": "minecraft:glass_bottle",
+"c": 6
+},
+{
+"i": "minecraft:nether_wart",
+"c": 6
+}
+]
+},
+{
+"m": "SCRIGNO DEL TESORO!",
+"t": "chest",
+"loot": [
+{
+"i": "minecraft:diamond",
+"c": 4
+},
+{
+"i": "minecraft:gold_ingot",
+"c": 10
+},
+{
+"i": "minecraft:emerald",
+"c": 6
+}
+]
+},
+{
+"m": "CASSA DEL COSTRUTTORE!",
+"t": "chest",
+"loot": [
+{
+"i": "minecraft:oak_planks",
+"c": 64
+},
+{
+"i": "minecraft:cobblestone",
+"c": 64
+},
+{
+"i": "minecraft:torch",
+"c": 16
+}
+]
+},
+{
+"m": "CASSA... DELUDENTE.",
+"t": "chest",
+"loot": [
+{
+"i": "minecraft:dirt",
+"c": 13
+},
+{
+"i": "minecraft:dead_bush",
+"c": 1
+},
+{
+"i": "minecraft:poisonous_potato",
+"c": 2
+}
+]
+},
+{
+"m": "ESPERIENZA PURA: +10 livelli!",
+"t": "xp",
+"l": 10
+},
+{
+"m": "Un po' di saggezza: +3 livelli!",
+"t": "xp",
+"l": 3
+},
+{
+"m": "ILLUMINAZIONE TOTALE: +25 livelli!",
+"t": "xp",
+"l": 25
+},
+{
+"m": "Un livello. Meglio di niente!",
+"t": "xp",
+"l": 1
+},
+{
+"m": "CURA COMPLETA! Come nuovo!",
+"t": "heal"
+},
+{
+"m": "FUOCHI D'ARTIFICIO! Festa!",
+"t": "fireworks",
+"c": 5
+},
+{
+"m": "SPETTACOLO PIROTECNICO DELUXE!",
+"t": "fireworks",
+"c": 12
+},
+{
+"m": "Le tue tasche hanno un buco: perdi un oggetto a caso!",
+"t": "dropinv"
+},
+{
+"m": "Un borseggiatore invisibile ti sfila qualcosa!",
+"t": "dropinv"
+},
+{
+"m": "Il blocco ti regala 4 carbone!",
+"t": "give",
+"i": "minecraft:coal",
+"c": 4
+},
+{
+"m": "Il blocco ti regala 11 redstone!",
+"t": "give",
+"i": "minecraft:redstone",
+"c": 11
+},
+{
+"m": "Il blocco ti regala 18 lapislazzuli!",
+"t": "give",
+"i": "minecraft:lapis_lazuli",
+"c": 18
+},
+{
+"m": "Il blocco ti regala 25 quarzo!",
+"t": "give",
+"i": "minecraft:quartz",
+"c": 25
+},
+{
+"m": "Il blocco ti regala 4 rame!",
+"t": "give",
+"i": "minecraft:copper_ingot",
+"c": 4
+},
+{
+"m": "Il blocco ti regala 11 bacche luminose!",
+"t": "give",
+"i": "minecraft:glow_berries",
+"c": 11
+},
+{
+"m": "Il blocco ti regala 18 bacche dolci!",
+"t": "give",
+"i": "minecraft:sweet_berries",
+"c": 18
+},
+{
+"m": "Il blocco ti regala 25 fette di anguria!",
+"t": "give",
+"i": "minecraft:melon_slice",
+"c": 25
+},
+{
+"m": "Il blocco ti regala 4 patate al forno!",
+"t": "give",
+"i": "minecraft:baked_potato",
+"c": 4
+},
+{
+"m": "Il blocco ti regala 11 salmone cotto!",
+"t": "give",
+"i": "minecraft:cooked_salmon",
+"c": 11
+},
+{
+"m": "Il blocco ti regala 18 braciole!",
+"t": "give",
+"i": "minecraft:cooked_porkchop",
+"c": 18
+},
+{
+"m": "Il blocco ti regala 25 zucche!",
+"t": "give",
+"i": "minecraft:pumpkin",
+"c": 25
+},
+{
+"m": "Il blocco ti regala 4 torce!",
+"t": "give",
+"i": "minecraft:torch",
+"c": 4
+},
+{
+"m": "Il blocco ti regala 11 alberelli di quercia!",
+"t": "give",
+"i": "minecraft:oak_sapling",
+"c": 11
+},
+{
+"m": "Il blocco ti regala 18 farina d'ossa!",
+"t": "give",
+"i": "minecraft:bone_meal",
+"c": 18
+},
+{
+"m": "Il blocco ti regala 25 fogli di carta!",
+"t": "give",
+"i": "minecraft:paper",
+"c": 25
+},
+{
+"m": "Il blocco ti regala 4 libri!",
+"t": "give",
+"i": "minecraft:book",
+"c": 4
+},
+{
+"m": "Il blocco ti regala 11 piume!",
+"t": "give",
+"i": "minecraft:feather",
+"c": 11
+},
+{
+"m": "Il blocco ti regala 18 cuoio!",
+"t": "give",
+"i": "minecraft:leather",
+"c": 18
+},
+{
+"m": "Il blocco ti regala 25 selce!",
+"t": "give",
+"i": "minecraft:flint",
+"c": 25
+},
+{
+"m": "Il blocco ti regala 4 argilla!",
+"t": "give",
+"i": "minecraft:clay_ball",
+"c": 4
+},
+{
+"m": "Il blocco ti regala 11 mattoni!",
+"t": "give",
+"i": "minecraft:brick",
+"c": 11
+},
+{
+"m": "Il blocco ti regala 18 vetro!",
+"t": "give",
+"i": "minecraft:glass",
+"c": 18
+},
+{
+"m": "Il blocco ti regala 25 sabbia!",
+"t": "give",
+"i": "minecraft:sand",
+"c": 25
+},
+{
+"m": "Il blocco ti regala 4 ghiaccio!",
+"t": "give",
+"i": "minecraft:ice",
+"c": 4
+},
+{
+"m": "Sbucano fuori 11 carbone!",
+"t": "give",
+"i": "minecraft:coal",
+"c": 11
+},
+{
+"m": "Sbucano fuori 18 redstone!",
+"t": "give",
+"i": "minecraft:redstone",
+"c": 18
+},
+{
+"m": "Sbucano fuori 25 lapislazzuli!",
+"t": "give",
+"i": "minecraft:lapis_lazuli",
+"c": 25
+},
+{
+"m": "Sbucano fuori 4 quarzo!",
+"t": "give",
+"i": "minecraft:quartz",
+"c": 4
+},
+{
+"m": "Sbucano fuori 11 rame!",
+"t": "give",
+"i": "minecraft:copper_ingot",
+"c": 11
+},
+{
+"m": "Sbucano fuori 18 bacche luminose!",
+"t": "give",
+"i": "minecraft:glow_berries",
+"c": 18
+},
+{
+"m": "Sbucano fuori 25 bacche dolci!",
+"t": "give",
+"i": "minecraft:sweet_berries",
+"c": 25
+},
+{
+"m": "Sbucano fuori 4 fette di anguria!",
+"t": "give",
+"i": "minecraft:melon_slice",
+"c": 4
+},
+{
+"m": "Sbucano fuori 11 patate al forno!",
+"t": "give",
+"i": "minecraft:baked_potato",
+"c": 11
+},
+{
+"m": "Sbucano fuori 18 salmone cotto!",
+"t": "give",
+"i": "minecraft:cooked_salmon",
+"c": 18
+},
+{
+"m": "Sbucano fuori 25 braciole!",
+"t": "give",
+"i": "minecraft:cooked_porkchop",
+"c": 25
+},
+{
+"m": "Sbucano fuori 4 zucche!",
+"t": "give",
+"i": "minecraft:pumpkin",
+"c": 4
+},
+{
+"m": "Sbucano fuori 11 torce!",
+"t": "give",
+"i": "minecraft:torch",
+"c": 11
+},
+{
+"m": "Sbucano fuori 18 alberelli di quercia!",
+"t": "give",
+"i": "minecraft:oak_sapling",
+"c": 18
+},
+{
+"m": "Sbucano fuori 25 farina d'ossa!",
+"t": "give",
+"i": "minecraft:bone_meal",
+"c": 25
+},
+{
+"m": "Sbucano fuori 4 fogli di carta!",
+"t": "give",
+"i": "minecraft:paper",
+"c": 4
+},
+{
+"m": "Sbucano fuori 11 libri!",
+"t": "give",
+"i": "minecraft:book",
+"c": 11
+},
+{
+"m": "Sbucano fuori 18 piume!",
+"t": "give",
+"i": "minecraft:feather",
+"c": 18
+},
+{
+"m": "Sbucano fuori 25 cuoio!",
+"t": "give",
+"i": "minecraft:leather",
+"c": 25
+},
+{
+"m": "Sbucano fuori 4 selce!",
+"t": "give",
+"i": "minecraft:flint",
+"c": 4
+},
+{
+"m": "Sbucano fuori 11 argilla!",
+"t": "give",
+"i": "minecraft:clay_ball",
+"c": 11
+},
+{
+"m": "Sbucano fuori 18 mattoni!",
+"t": "give",
+"i": "minecraft:brick",
+"c": 18
+},
+{
+"m": "Sbucano fuori 25 vetro!",
+"t": "give",
+"i": "minecraft:glass",
+"c": 25
+},
+{
+"m": "Sbucano fuori 4 sabbia!",
+"t": "give",
+"i": "minecraft:sand",
+"c": 4
+},
+{
+"m": "Sbucano fuori 11 ghiaccio!",
+"t": "give",
+"i": "minecraft:ice",
+"c": 11
+},
+{
+"m": "Eccoti 18 carbone!",
+"t": "give",
+"i": "minecraft:coal",
+"c": 18
+},
+{
+"m": "Eccoti 25 redstone!",
+"t": "give",
+"i": "minecraft:redstone",
+"c": 25
+},
+{
+"m": "Eccoti 4 lapislazzuli!",
+"t": "give",
+"i": "minecraft:lapis_lazuli",
+"c": 4
+},
+{
+"m": "Eccoti 11 quarzo!",
+"t": "give",
+"i": "minecraft:quartz",
+"c": 11
+},
+{
+"m": "Eccoti 18 rame!",
+"t": "give",
+"i": "minecraft:copper_ingot",
+"c": 18
+},
+{
+"m": "Eccoti 25 bacche luminose!",
+"t": "give",
+"i": "minecraft:glow_berries",
+"c": 25
+},
+{
+"m": "Eccoti 4 bacche dolci!",
+"t": "give",
+"i": "minecraft:sweet_berries",
+"c": 4
+},
+{
+"m": "Eccoti 11 fette di anguria!",
+"t": "give",
+"i": "minecraft:melon_slice",
+"c": 11
+},
+{
+"m": "Eccoti 18 patate al forno!",
+"t": "give",
+"i": "minecraft:baked_potato",
+"c": 18
+},
+{
+"m": "Eccoti 25 salmone cotto!",
+"t": "give",
+"i": "minecraft:cooked_salmon",
+"c": 25
+},
+{
+"m": "Eccoti 4 braciole!",
+"t": "give",
+"i": "minecraft:cooked_porkchop",
+"c": 4
+},
+{
+"m": "Eccoti 11 zucche!",
+"t": "give",
+"i": "minecraft:pumpkin",
+"c": 11
+},
+{
+"m": "Eccoti 18 torce!",
+"t": "give",
+"i": "minecraft:torch",
+"c": 18
+},
+{
+"m": "Eccoti 25 alberelli di quercia!",
+"t": "give",
+"i": "minecraft:oak_sapling",
+"c": 25
+},
+{
+"m": "Eccoti 4 farina d'ossa!",
+"t": "give",
+"i": "minecraft:bone_meal",
+"c": 4
+},
+{
+"m": "Eccoti 11 fogli di carta!",
+"t": "give",
+"i": "minecraft:paper",
+"c": 11
+},
+{
+"m": "Eccoti 18 libri!",
+"t": "give",
+"i": "minecraft:book",
+"c": 18
+},
+{
+"m": "Eccoti 25 piume!",
+"t": "give",
+"i": "minecraft:feather",
+"c": 25
+},
+{
+"m": "Eccoti 4 cuoio!",
+"t": "give",
+"i": "minecraft:leather",
+"c": 4
+},
+{
+"m": "Eccoti 11 selce!",
+"t": "give",
+"i": "minecraft:flint",
+"c": 11
+},
+{
+"m": "Eccoti 18 argilla!",
+"t": "give",
+"i": "minecraft:clay_ball",
+"c": 18
+},
+{
+"m": "Eccoti 25 mattoni!",
+"t": "give",
+"i": "minecraft:brick",
+"c": 25
+},
+{
+"m": "Eccoti 4 vetro!",
+"t": "give",
+"i": "minecraft:glass",
+"c": 4
+},
+{
+"m": "Eccoti 11 sabbia!",
+"t": "give",
+"i": "minecraft:sand",
+"c": 11
+},
+{
+"m": "Eccoti 18 ghiaccio!",
+"t": "give",
+"i": "minecraft:ice",
+"c": 18
+},
+{
+"m": "Dal nulla appaiono 25 carbone!",
+"t": "give",
+"i": "minecraft:coal",
+"c": 25
+},
+{
+"m": "Dal nulla appaiono 4 redstone!",
+"t": "give",
+"i": "minecraft:redstone",
+"c": 4
+},
+{
+"m": "Dal nulla appaiono 11 lapislazzuli!",
+"t": "give",
+"i": "minecraft:lapis_lazuli",
+"c": 11
+},
+{
+"m": "Dal nulla appaiono 18 quarzo!",
+"t": "give",
+"i": "minecraft:quartz",
+"c": 18
+},
+{
+"m": "Dal nulla appaiono 25 rame!",
+"t": "give",
+"i": "minecraft:copper_ingot",
+"c": 25
+},
+{
+"m": "Dal nulla appaiono 4 bacche luminose!",
+"t": "give",
+"i": "minecraft:glow_berries",
+"c": 4
+},
+{
+"m": "Dal nulla appaiono 11 bacche dolci!",
+"t": "give",
+"i": "minecraft:sweet_berries",
+"c": 11
+},
+{
+"m": "Dal nulla appaiono 18 fette di anguria!",
+"t": "give",
+"i": "minecraft:melon_slice",
+"c": 18
+},
+{
+"m": "Dal nulla appaiono 25 patate al forno!",
+"t": "give",
+"i": "minecraft:baked_potato",
+"c": 25
+},
+{
+"m": "Dal nulla appaiono 4 salmone cotto!",
+"t": "give",
+"i": "minecraft:cooked_salmon",
+"c": 4
+},
+{
+"m": "Dal nulla appaiono 11 braciole!",
+"t": "give",
+"i": "minecraft:cooked_porkchop",
+"c": 11
+},
+{
+"m": "Dal nulla appaiono 18 zucche!",
+"t": "give",
+"i": "minecraft:pumpkin",
+"c": 18
+},
+{
+"m": "Dal nulla appaiono 25 torce!",
+"t": "give",
+"i": "minecraft:torch",
+"c": 25
+},
+{
+"m": "Dal nulla appaiono 4 alberelli di quercia!",
+"t": "give",
+"i": "minecraft:oak_sapling",
+"c": 4
+},
+{
+"m": "Dal nulla appaiono 11 farina d'ossa!",
+"t": "give",
+"i": "minecraft:bone_meal",
+"c": 11
+},
+{
+"m": "Dal nulla appaiono 18 fogli di carta!",
+"t": "give",
+"i": "minecraft:paper",
+"c": 18
+},
+{
+"m": "Dal nulla appaiono 25 libri!",
+"t": "give",
+"i": "minecraft:book",
+"c": 25
+},
+{
+"m": "Dal nulla appaiono 4 piume!",
+"t": "give",
+"i": "minecraft:feather",
+"c": 4
+},
+{
+"m": "Dal nulla appaiono 11 cuoio!",
+"t": "give",
+"i": "minecraft:leather",
+"c": 11
+},
+{
+"m": "Dal nulla appaiono 18 selce!",
+"t": "give",
+"i": "minecraft:flint",
+"c": 18
+},
+{
+"m": "Dal nulla appaiono 25 argilla!",
+"t": "give",
+"i": "minecraft:clay_ball",
+"c": 25
+},
+{
+"m": "Dal nulla appaiono 4 mattoni!",
+"t": "give",
+"i": "minecraft:brick",
+"c": 4
+},
+{
+"m": "Dal nulla appaiono 11 vetro!",
+"t": "give",
+"i": "minecraft:glass",
+"c": 11
+},
+{
+"m": "Dal nulla appaiono 18 sabbia!",
+"t": "give",
+"i": "minecraft:sand",
+"c": 18
+},
+{
+"m": "Dal nulla appaiono 25 ghiaccio!",
+"t": "give",
+"i": "minecraft:ice",
+"c": 25
+},
+{
+"m": "Il destino ti consegna 4 carbone!",
+"t": "give",
+"i": "minecraft:coal",
+"c": 4
+},
+{
+"m": "Il destino ti consegna 11 redstone!",
+"t": "give",
+"i": "minecraft:redstone",
+"c": 11
+},
+{
+"m": "Il destino ti consegna 18 lapislazzuli!",
+"t": "give",
+"i": "minecraft:lapis_lazuli",
+"c": 18
+},
+{
+"m": "Il destino ti consegna 25 quarzo!",
+"t": "give",
+"i": "minecraft:quartz",
+"c": 25
+},
+{
+"m": "Il destino ti consegna 4 rame!",
+"t": "give",
+"i": "minecraft:copper_ingot",
+"c": 4
+},
+{
+"m": "Il destino ti consegna 11 bacche luminose!",
+"t": "give",
+"i": "minecraft:glow_berries",
+"c": 11
+},
+{
+"m": "Il destino ti consegna 18 bacche dolci!",
+"t": "give",
+"i": "minecraft:sweet_berries",
+"c": 18
+},
+{
+"m": "Il destino ti consegna 25 fette di anguria!",
+"t": "give",
+"i": "minecraft:melon_slice",
+"c": 25
+},
+{
+"m": "Il destino ti consegna 4 patate al forno!",
+"t": "give",
+"i": "minecraft:baked_potato",
+"c": 4
+},
+{
+"m": "Il destino ti consegna 11 salmone cotto!",
+"t": "give",
+"i": "minecraft:cooked_salmon",
+"c": 11
+},
+{
+"m": "Il destino ti consegna 18 braciole!",
+"t": "give",
+"i": "minecraft:cooked_porkchop",
+"c": 18
+},
+{
+"m": "Il destino ti consegna 25 zucche!",
+"t": "give",
+"i": "minecraft:pumpkin",
+"c": 25
+},
+{
+"m": "Il destino ti consegna 4 torce!",
+"t": "give",
+"i": "minecraft:torch",
+"c": 4
+},
+{
+"m": "Il destino ti consegna 11 alberelli di quercia!",
+"t": "give",
+"i": "minecraft:oak_sapling",
+"c": 11
+},
+{
+"m": "Il destino ti consegna 18 farina d'ossa!",
+"t": "give",
+"i": "minecraft:bone_meal",
+"c": 18
+},
+{
+"m": "Il destino ti consegna 25 fogli di carta!",
+"t": "give",
+"i": "minecraft:paper",
+"c": 25
+},
+{
+"m": "Il destino ti consegna 4 libri!",
+"t": "give",
+"i": "minecraft:book",
+"c": 4
+},
+{
+"m": "Il destino ti consegna 11 piume!",
+"t": "give",
+"i": "minecraft:feather",
+"c": 11
+},
+{
+"m": "Il destino ti consegna 18 cuoio!",
+"t": "give",
+"i": "minecraft:leather",
+"c": 18
+},
+{
+"m": "Il destino ti consegna 25 selce!",
+"t": "give",
+"i": "minecraft:flint",
+"c": 25
+},
+{
+"m": "Il destino ti consegna 4 argilla!",
+"t": "give",
+"i": "minecraft:clay_ball",
+"c": 4
+},
+{
+"m": "Il destino ti consegna 11 mattoni!",
+"t": "give",
+"i": "minecraft:brick",
+"c": 11
+},
+{
+"m": "Il destino ti consegna 18 vetro!",
+"t": "give",
+"i": "minecraft:glass",
+"c": 18
+},
+{
+"m": "Il destino ti consegna 25 sabbia!",
+"t": "give",
+"i": "minecraft:sand",
+"c": 25
+},
+{
+"m": "Il destino ti consegna 4 ghiaccio!",
+"t": "give",
+"i": "minecraft:ice",
+"c": 4
+},
+{
+"m": "Piccolo bottino: 11 carbone!",
+"t": "give",
+"i": "minecraft:coal",
+"c": 11
+},
+{
+"m": "Piccolo bottino: 18 redstone!",
+"t": "give",
+"i": "minecraft:redstone",
+"c": 18
+},
+{
+"m": "Piccolo bottino: 25 lapislazzuli!",
+"t": "give",
+"i": "minecraft:lapis_lazuli",
+"c": 25
+},
+{
+"m": "Piccolo bottino: 4 quarzo!",
+"t": "give",
+"i": "minecraft:quartz",
+"c": 4
+},
+{
+"m": "Piccolo bottino: 11 rame!",
+"t": "give",
+"i": "minecraft:copper_ingot",
+"c": 11
+},
+{
+"m": "Piccolo bottino: 18 bacche luminose!",
+"t": "give",
+"i": "minecraft:glow_berries",
+"c": 18
+},
+{
+"m": "Piccolo bottino: 25 bacche dolci!",
+"t": "give",
+"i": "minecraft:sweet_berries",
+"c": 25
+},
+{
+"m": "Piccolo bottino: 4 fette di anguria!",
+"t": "give",
+"i": "minecraft:melon_slice",
+"c": 4
+},
+{
+"m": "Piccolo bottino: 11 patate al forno!",
+"t": "give",
+"i": "minecraft:baked_potato",
+"c": 11
+},
+{
+"m": "Piccolo bottino: 18 salmone cotto!",
+"t": "give",
+"i": "minecraft:cooked_salmon",
+"c": 18
+},
+{
+"m": "Piccolo bottino: 25 braciole!",
+"t": "give",
+"i": "minecraft:cooked_porkchop",
+"c": 25
+},
+{
+"m": "Piccolo bottino: 4 zucche!",
+"t": "give",
+"i": "minecraft:pumpkin",
+"c": 4
+},
+{
+"m": "Piccolo bottino: 11 torce!",
+"t": "give",
+"i": "minecraft:torch",
+"c": 11
+},
+{
+"m": "Piccolo bottino: 18 alberelli di quercia!",
+"t": "give",
+"i": "minecraft:oak_sapling",
+"c": 18
+},
+{
+"m": "Piccolo bottino: 25 farina d'ossa!",
+"t": "give",
+"i": "minecraft:bone_meal",
+"c": 25
+},
+{
+"m": "Piccolo bottino: 4 fogli di carta!",
+"t": "give",
+"i": "minecraft:paper",
+"c": 4
+},
+{
+"m": "Piccolo bottino: 11 libri!",
+"t": "give",
+"i": "minecraft:book",
+"c": 11
+},
+{
+"m": "Piccolo bottino: 18 piume!",
+"t": "give",
+"i": "minecraft:feather",
+"c": 18
+},
+{
+"m": "Piccolo bottino: 25 cuoio!",
+"t": "give",
+"i": "minecraft:leather",
+"c": 25
+},
+{
+"m": "Piccolo bottino: 4 selce!",
+"t": "give",
+"i": "minecraft:flint",
+"c": 4
+},
+{
+"m": "Piccolo bottino: 11 argilla!",
+"t": "give",
+"i": "minecraft:clay_ball",
+"c": 11
+},
+{
+"m": "Piccolo bottino: 18 mattoni!",
+"t": "give",
+"i": "minecraft:brick",
+"c": 18
+},
+{
+"m": "Piccolo bottino: 25 vetro!",
+"t": "give",
+"i": "minecraft:glass",
+"c": 25
+},
+{
+"m": "Piccolo bottino: 4 sabbia!",
+"t": "give",
+"i": "minecraft:sand",
+"c": 4
+},
+{
+"m": "Piccolo bottino: 11 ghiaccio!",
+"t": "give",
+"i": "minecraft:ice",
+"c": 11
+},
+{
+"m": "Riserva trovata: 18 carbone!",
+"t": "give",
+"i": "minecraft:coal",
+"c": 18
+},
+{
+"m": "Riserva trovata: 25 redstone!",
+"t": "give",
+"i": "minecraft:redstone",
+"c": 25
+},
+{
+"m": "Riserva trovata: 4 lapislazzuli!",
+"t": "give",
+"i": "minecraft:lapis_lazuli",
+"c": 4
+},
+{
+"m": "Riserva trovata: 11 quarzo!",
+"t": "give",
+"i": "minecraft:quartz",
+"c": 11
+},
+{
+"m": "Riserva trovata: 18 rame!",
+"t": "give",
+"i": "minecraft:copper_ingot",
+"c": 18
+},
+{
+"m": "Riserva trovata: 25 bacche luminose!",
+"t": "give",
+"i": "minecraft:glow_berries",
+"c": 25
+},
+{
+"m": "Riserva trovata: 4 bacche dolci!",
+"t": "give",
+"i": "minecraft:sweet_berries",
+"c": 4
+},
+{
+"m": "Riserva trovata: 11 fette di anguria!",
+"t": "give",
+"i": "minecraft:melon_slice",
+"c": 11
+},
+{
+"m": "Riserva trovata: 18 patate al forno!",
+"t": "give",
+"i": "minecraft:baked_potato",
+"c": 18
+},
+{
+"m": "Riserva trovata: 25 salmone cotto!",
+"t": "give",
+"i": "minecraft:cooked_salmon",
+"c": 25
+},
+{
+"m": "Riserva trovata: 4 braciole!",
+"t": "give",
+"i": "minecraft:cooked_porkchop",
+"c": 4
+},
+{
+"m": "Riserva trovata: 11 zucche!",
+"t": "give",
+"i": "minecraft:pumpkin",
+"c": 11
+},
+{
+"m": "Riserva trovata: 18 torce!",
+"t": "give",
+"i": "minecraft:torch",
+"c": 18
+},
+{
+"m": "Riserva trovata: 25 alberelli di quercia!",
+"t": "give",
+"i": "minecraft:oak_sapling",
+"c": 25
+},
+{
+"m": "Riserva trovata: 4 farina d'ossa!",
+"t": "give",
+"i": "minecraft:bone_meal",
+"c": 4
+},
+{
+"m": "Riserva trovata: 11 fogli di carta!",
+"t": "give",
+"i": "minecraft:paper",
+"c": 11
+},
+{
+"m": "Riserva trovata: 18 libri!",
+"t": "give",
+"i": "minecraft:book",
+"c": 18
+},
+{
+"m": "Riserva trovata: 25 piume!",
+"t": "give",
+"i": "minecraft:feather",
+"c": 25
+},
+{
+"m": "Riserva trovata: 4 cuoio!",
+"t": "give",
+"i": "minecraft:leather",
+"c": 4
+},
+{
+"m": "Riserva trovata: 11 selce!",
+"t": "give",
+"i": "minecraft:flint",
+"c": 11
+},
+{
+"m": "Riserva trovata: 18 argilla!",
+"t": "give",
+"i": "minecraft:clay_ball",
+"c": 18
+},
+{
+"m": "Riserva trovata: 25 mattoni!",
+"t": "give",
+"i": "minecraft:brick",
+"c": 25
+},
+{
+"m": "Riserva trovata: 4 vetro!",
+"t": "give",
+"i": "minecraft:glass",
+"c": 4
+},
+{
+"m": "Riserva trovata: 11 sabbia!",
+"t": "give",
+"i": "minecraft:sand",
+"c": 11
+},
+{
+"m": "Riserva trovata: 18 ghiaccio!",
+"t": "give",
+"i": "minecraft:ice",
+"c": 18
+},
+{
+"m": "Scorta segreta: 25 carbone!",
+"t": "give",
+"i": "minecraft:coal",
+"c": 25
+},
+{
+"m": "Scorta segreta: 4 redstone!",
+"t": "give",
+"i": "minecraft:redstone",
+"c": 4
+},
+{
+"m": "Scorta segreta: 11 lapislazzuli!",
+"t": "give",
+"i": "minecraft:lapis_lazuli",
+"c": 11
+},
+{
+"m": "Scorta segreta: 18 quarzo!",
+"t": "give",
+"i": "minecraft:quartz",
+"c": 18
+},
+{
+"m": "Scorta segreta: 25 rame!",
+"t": "give",
+"i": "minecraft:copper_ingot",
+"c": 25
+},
+{
+"m": "Scorta segreta: 4 bacche luminose!",
+"t": "give",
+"i": "minecraft:glow_berries",
+"c": 4
+},
+{
+"m": "Scorta segreta: 11 bacche dolci!",
+"t": "give",
+"i": "minecraft:sweet_berries",
+"c": 11
+},
+{
+"m": "Scorta segreta: 18 fette di anguria!",
+"t": "give",
+"i": "minecraft:melon_slice",
+"c": 18
+},
+{
+"m": "Scorta segreta: 25 patate al forno!",
+"t": "give",
+"i": "minecraft:baked_potato",
+"c": 25
+},
+{
+"m": "Scorta segreta: 4 salmone cotto!",
+"t": "give",
+"i": "minecraft:cooked_salmon",
+"c": 4
+}
+]
