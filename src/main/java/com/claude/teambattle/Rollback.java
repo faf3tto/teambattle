@@ -84,6 +84,28 @@ public class Rollback
 		catch (Exception ignored) {}
 	}
 
+	// Variante con stato originale esplicito: per gli eventi che scattano
+	// DOPO la modifica (es. piazzamento di un blocco), dove lo stato attuale
+	// del mondo è già quello nuovo e l'originale ce lo dice l'evento stesso
+	public static void record(ServerLevel lvl, BlockPos pos, BlockState originalState)
+	{
+		if (!recording || lvl != level || originalState == null || journal.containsKey(pos))
+			return;
+
+		if (journal.size() >= MAX_ENTRIES)
+		{
+			if (!warnedFull)
+			{
+				warnedFull = true;
+				System.err.println("[TeamBattle] Giornale del ripristino pieno (" + MAX_ENTRIES +
+					" blocchi): le modifiche successive non verranno ripristinate.");
+			}
+			return;
+		}
+
+		journal.put(pos.immutable(), new Snapshot(originalState, null));
+	}
+
 	// Avvia il ripristino graduale (chiamato a fine partita)
 	public static void startRestore()
 	{

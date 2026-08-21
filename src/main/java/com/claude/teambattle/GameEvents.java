@@ -48,8 +48,22 @@ public class GameEvents
 	@SubscribeEvent
 	public static void onBlockPlace(BlockEvent.EntityPlaceEvent event)
 	{
+		// L'evento scatta DOPO il piazzamento: lo stato originale (di solito
+		// aria) va preso dallo snapshot del blocco sostituito, così a fine
+		// partita i blocchi piazzati dai giocatori vengono rimossi
 		if (event.getLevel() instanceof ServerLevel level)
-			Rollback.record(level, event.getPos());
+			Rollback.record(level, event.getPos(), event.getBlockSnapshot().getReplacedBlock());
+	}
+
+	@SubscribeEvent
+	public static void onBlockMultiPlace(BlockEvent.EntityMultiPlaceEvent event)
+	{
+		// Piazzamenti che occupano piu' blocchi in un colpo (porte, letti...)
+		if (!(event.getLevel() instanceof ServerLevel level))
+			return;
+
+		for (var snap : event.getReplacedBlockSnapshots())
+			Rollback.record(level, snap.getPos(), snap.getReplacedBlock());
 	}
 
 	@SubscribeEvent
